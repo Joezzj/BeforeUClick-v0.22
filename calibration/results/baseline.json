@@ -1,0 +1,4774 @@
+{
+  "generatedAt": "2026-10-01T19:33:29.004Z",
+  "scenarioCount": 78,
+  "scoringModelRevision": "0.22.17-auth-identity-family",
+  "scoringModel": {
+    "revision": "0.22.17-auth-identity-family",
+    "baseUncertaintyScore": 15,
+    "identityCap": 30,
+    "linkCap": 45,
+    "wordingCap": 15,
+    "combinationCap": 20,
+    "weakIdentityCap": 8,
+    "weakLinkCap": 8,
+    "weakWordingCap": 6,
+    "reassuranceCap": 12,
+    "reassuranceCapWhenMediumConcern": 7,
+    "reassuranceCapWhenStrongConcern": 5,
+    "totalCap": 100,
+    "criticalMinimum": 70,
+    "thresholds": {
+      "noConcernsMax": 9,
+      "review": 17,
+      "reviewStrong": 25,
+      "caution": 35,
+      "cautionStrong": 45,
+      "high": 60
+    }
+  },
+  "totals": {
+    "PASS": 70,
+    "ACCEPTABLE": 8,
+    "FAIL": 0
+  },
+  "trackSummary": {
+    "regression": {
+      "total": 48,
+      "PASS": 41,
+      "ACCEPTABLE": 7,
+      "FAIL": 0,
+      "states": {
+        "unknown": 7,
+        "no-concerns": 3,
+        "review": 19,
+        "caution": 10,
+        "high": 9
+      }
+    },
+    "challenge": {
+      "total": 30,
+      "PASS": 29,
+      "ACCEPTABLE": 1,
+      "FAIL": 0,
+      "states": {
+        "review": 17,
+        "high": 3,
+        "caution": 9,
+        "unknown": 1
+      }
+    }
+  },
+  "groupSummary": {
+    "legitimate": {
+      "total": 12,
+      "PASS": 8,
+      "ACCEPTABLE": 4,
+      "FAIL": 0,
+      "states": {
+        "unknown": 6,
+        "no-concerns": 3,
+        "review": 3
+      }
+    },
+    "ambiguous": {
+      "total": 12,
+      "PASS": 10,
+      "ACCEPTABLE": 2,
+      "FAIL": 0,
+      "states": {
+        "review": 10,
+        "caution": 2
+      }
+    },
+    "phishing": {
+      "total": 12,
+      "PASS": 12,
+      "ACCEPTABLE": 0,
+      "FAIL": 0,
+      "states": {
+        "high": 7,
+        "caution": 4,
+        "review": 1
+      }
+    },
+    "invariant": {
+      "total": 12,
+      "PASS": 11,
+      "ACCEPTABLE": 1,
+      "FAIL": 0,
+      "states": {
+        "review": 5,
+        "caution": 4,
+        "unknown": 1,
+        "high": 2
+      }
+    },
+    "challenge-legitimate": {
+      "total": 10,
+      "PASS": 9,
+      "ACCEPTABLE": 1,
+      "FAIL": 0,
+      "states": {
+        "review": 8,
+        "caution": 1,
+        "unknown": 1
+      }
+    },
+    "challenge-ambiguous": {
+      "total": 10,
+      "PASS": 10,
+      "ACCEPTABLE": 0,
+      "FAIL": 0,
+      "states": {
+        "review": 9,
+        "caution": 1
+      }
+    },
+    "challenge-phishing": {
+      "total": 10,
+      "PASS": 10,
+      "ACCEPTABLE": 0,
+      "FAIL": 0,
+      "states": {
+        "high": 3,
+        "caution": 7
+      }
+    }
+  },
+  "scoreBandSummary": {
+    "limited-evidence": 8,
+    "reassuring": 3,
+    "review-suggested": 29,
+    "review-recommended": 7,
+    "caution-advised": 13,
+    "high-concern": 12,
+    "strong-caution": 6
+  },
+  "results": [
+    {
+      "id": "LEG-01",
+      "track": "regression",
+      "group": "legitimate",
+      "signalFocus": null,
+      "description": "Ordinary personal email with no recognised concern signals",
+      "status": "PASS",
+      "actualState": "unknown",
+      "actualLabel": "NOT ENOUGH EVIDENCE",
+      "score": 15,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "scoreBandLabel": "Limited evidence",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "unknown"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [],
+      "wordingMatches": [],
+      "links": []
+    },
+    {
+      "id": "LEG-02",
+      "track": "regression",
+      "group": "legitimate",
+      "signalFocus": null,
+      "description": "Official sender plus aligned authentication, no concerning content",
+      "status": "PASS",
+      "actualState": "no-concerns",
+      "actualLabel": "NO OBVIOUS CONCERNS",
+      "score": 6,
+      "scoreDerivedState": "no-concerns",
+      "scoreBand": "reassuring",
+      "scoreBandLabel": "Reassuring",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "no-concerns"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -9,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "wordingMatches": [],
+      "links": []
+    },
+    {
+      "id": "LEG-03",
+      "track": "regression",
+      "group": "legitimate",
+      "signalFocus": null,
+      "description": "Known sender with otherwise ordinary message",
+      "status": "PASS",
+      "actualState": "unknown",
+      "actualLabel": "NOT ENOUGH EVIDENCE",
+      "score": 13,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "scoreBandLabel": "Limited evidence",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "unknown"
+      ],
+      "expectedAcceptable": [
+        "no-concerns"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -2,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "known-local-sender"
+      ],
+      "wordingMatches": [],
+      "links": []
+    },
+    {
+      "id": "LEG-04",
+      "track": "regression",
+      "group": "legitimate",
+      "signalFocus": null,
+      "description": "Legitimate security notification with official identity and official destination",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown",
+        "no-concerns"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": -7,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 1,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "account-compromised",
+        "credential-request",
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass",
+        "official-domain-reference"
+      ],
+      "wordingMatches": [
+        "account-compromised",
+        "credential-request"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://account.microsoft.com/",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "LEG-05",
+      "track": "regression",
+      "group": "legitimate",
+      "signalFocus": null,
+      "description": "Legitimate password reset wording without asking the user to disclose a password",
+      "status": "PASS",
+      "actualState": "no-concerns",
+      "actualLabel": "NO OBVIOUS CONCERNS",
+      "score": 3,
+      "scoreDerivedState": "no-concerns",
+      "scoreBand": "reassuring",
+      "scoreBandLabel": "Reassuring",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "no-concerns"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -12,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 1,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass",
+        "official-domain-reference"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://account.microsoft.com/",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "LEG-06",
+      "track": "regression",
+      "group": "legitimate",
+      "signalFocus": null,
+      "description": "Parcel notice with official destination and good identity evidence",
+      "status": "PASS",
+      "actualState": "no-concerns",
+      "actualLabel": "NO OBVIOUS CONCERNS",
+      "score": 5,
+      "scoreDerivedState": "no-concerns",
+      "scoreBand": "reassuring",
+      "scoreBandLabel": "Reassuring",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "no-concerns"
+      ],
+      "expectedAcceptable": [
+        "unknown",
+        "review"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": -12,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 1,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "parcel-delivery",
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass",
+        "official-domain-reference"
+      ],
+      "wordingMatches": [
+        "parcel-delivery"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://www.nzpost.co.nz/tools/tracking",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "LEG-07",
+      "track": "regression",
+      "group": "legitimate",
+      "signalFocus": null,
+      "description": "Legitimate invoice reminder with official identity",
+      "status": "ACCEPTABLE",
+      "actualState": "unknown",
+      "actualLabel": "NOT ENOUGH EVIDENCE",
+      "score": 13,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "scoreBandLabel": "Limited evidence",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": -7,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 1,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "payment-pressure",
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass",
+        "official-domain-reference"
+      ],
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://www.xero.com/",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "LEG-08",
+      "track": "regression",
+      "group": "legitimate",
+      "signalFocus": null,
+      "description": "Long unknown marketing/tracking URL alone should remain informational rather than force Review",
+      "status": "PASS",
+      "actualState": "unknown",
+      "actualLabel": "NOT ENOUGH EVIDENCE",
+      "score": 15,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "scoreBandLabel": "Limited evidence",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "unknown"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "long-url"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://news.example.org/very/long/campaign/path/that/contains/many/segments?utm_source=email&utm_medium=newsletter&utm_campaign=summer_sale_2026&subscriber=1234567890&tracking=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "score": 0,
+          "warningCodes": [
+            "long-url"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "LEG-09",
+      "track": "regression",
+      "group": "legitimate",
+      "signalFocus": null,
+      "description": "Recognised shared-hosting destination remains neutral rather than reassuring or dangerous",
+      "status": "PASS",
+      "actualState": "unknown",
+      "actualLabel": "NOT ENOUGH EVIDENCE",
+      "score": 15,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "scoreBandLabel": "Limited evidence",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "unknown"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://sample-project.github.io/",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "LEG-10",
+      "track": "regression",
+      "group": "legitimate",
+      "signalFocus": null,
+      "description": "Forwarded-style authentication oddity with DKIM and DMARC reassurance should stay around Review",
+      "status": "ACCEPTABLE",
+      "actualState": "unknown",
+      "actualLabel": "NOT ENOUGH EVIDENCE",
+      "score": 16,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "scoreBandLabel": "Limited evidence",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 5,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "auth-spf-fail",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "wordingMatches": [],
+      "links": []
+    },
+    {
+      "id": "LEG-11",
+      "track": "regression",
+      "group": "legitimate",
+      "signalFocus": null,
+      "description": "Single urgency phrase alone should remain in Not enough evidence",
+      "status": "ACCEPTABLE",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 17,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "unknown"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "urgency"
+      ],
+      "wordingMatches": [
+        "urgency"
+      ],
+      "links": []
+    },
+    {
+      "id": "LEG-12",
+      "track": "regression",
+      "group": "legitimate",
+      "signalFocus": null,
+      "description": "Ordinary QR mention alone should remain low-noise",
+      "status": "ACCEPTABLE",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 17,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "unknown"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "qr-quishing"
+      ],
+      "wordingMatches": [
+        "qr-quishing"
+      ],
+      "links": []
+    },
+    {
+      "id": "AMB-01",
+      "track": "regression",
+      "group": "ambiguous",
+      "signalFocus": null,
+      "description": "HTTP-only link should prompt review but not high concern",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 8,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "http"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "http://example.test/",
+          "score": 8,
+          "warningCodes": [
+            "http"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AMB-02",
+      "track": "regression",
+      "group": "ambiguous",
+      "signalFocus": null,
+      "description": "URL shortener alone is notable but not automatically high concern",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 15,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "shortener"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://bit.ly/example",
+          "score": 15,
+          "warningCodes": [
+            "shortener"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AMB-03",
+      "track": "regression",
+      "group": "ambiguous",
+      "signalFocus": null,
+      "description": "Punycode destination is notable and may reach Review/Caution",
+      "status": "ACCEPTABLE",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 35,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 20,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "punycode"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://xn--e1afmkfd.xn--p1ai/",
+          "score": 20,
+          "warningCodes": [
+            "punycode"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AMB-04",
+      "track": "regression",
+      "group": "ambiguous",
+      "signalFocus": null,
+      "description": "Raw IP destination should reach at least Caution",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 44,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 29,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 29,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "ip-host",
+        "url-word"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://192.0.2.40/login",
+          "score": 29,
+          "warningCodes": [
+            "ip-host",
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AMB-05",
+      "track": "regression",
+      "group": "ambiguous",
+      "signalFocus": null,
+      "description": "Moderate sender identity inconsistency should land around Review",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "sender-domain-mismatch"
+      ],
+      "wordingMatches": [],
+      "links": []
+    },
+    {
+      "id": "AMB-06",
+      "track": "regression",
+      "group": "ambiguous",
+      "signalFocus": null,
+      "description": "DMARC failure is a strong authentication concern",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "auth-dmarc-fail"
+      ],
+      "wordingMatches": [],
+      "links": []
+    },
+    {
+      "id": "AMB-07",
+      "track": "regression",
+      "group": "ambiguous",
+      "signalFocus": null,
+      "description": "Passed but unaligned authentication alone should remain low to moderate",
+      "status": "ACCEPTABLE",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 19,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "unknown"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 4,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 4,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "auth-domain-unaligned"
+      ],
+      "wordingMatches": [],
+      "links": []
+    },
+    {
+      "id": "AMB-08",
+      "track": "regression",
+      "group": "ambiguous",
+      "signalFocus": null,
+      "description": "Direct password request without suspicious link should still deserve caution",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "password-request"
+      ],
+      "wordingMatches": [
+        "password-request"
+      ],
+      "links": []
+    },
+    {
+      "id": "AMB-09",
+      "track": "regression",
+      "group": "ambiguous",
+      "signalFocus": null,
+      "description": "Direct MFA code request without suspicious link should still deserve caution",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "mfa-code-request"
+      ],
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "links": []
+    },
+    {
+      "id": "AMB-10",
+      "track": "regression",
+      "group": "ambiguous",
+      "signalFocus": null,
+      "description": "Changed payment details alone should deserve caution",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "changed-payment-details"
+      ],
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "links": []
+    },
+    {
+      "id": "AMB-11",
+      "track": "regression",
+      "group": "ambiguous",
+      "signalFocus": null,
+      "description": "Gift-card request alone should deserve caution",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "gift-card"
+      ],
+      "wordingMatches": [
+        "gift-card"
+      ],
+      "links": []
+    },
+    {
+      "id": "AMB-12",
+      "track": "regression",
+      "group": "ambiguous",
+      "signalFocus": null,
+      "description": "Remote-access request alone should deserve caution",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "remote-access"
+      ],
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "links": []
+    },
+    {
+      "id": "PH-01",
+      "track": "regression",
+      "group": "phishing",
+      "signalFocus": null,
+      "description": "TC-P01-style urgent password request plus displayed-destination mismatch",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 89,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 39,
+        "wording": 15,
+        "combinations": 20,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 39,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [
+        "credential-plus-strong-link",
+        "urgency-action-link",
+        "urgent-secret-request-plus-strong-link"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "url-word",
+        "brand-domain-inconsistency",
+        "urgency",
+        "account-compromised",
+        "password-request",
+        "credential-plus-strong-link",
+        "urgency-action-link",
+        "urgent-secret-request-plus-strong-link"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "account-compromised",
+        "password-request"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://example-login.invalid/verify",
+          "score": 39,
+          "warningCodes": [
+            "display-mismatch",
+            "url-word",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PH-02",
+      "track": "regression",
+      "group": "phishing",
+      "signalFocus": null,
+      "description": "Urgent MFA-code request plus strong link mismatch",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 84,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 39,
+        "wording": 10,
+        "combinations": 20,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 39,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [
+        "credential-plus-strong-link",
+        "urgency-action-link",
+        "urgent-secret-request-plus-strong-link"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "url-word",
+        "brand-domain-inconsistency",
+        "urgency",
+        "mfa-code-request",
+        "credential-plus-strong-link",
+        "urgency-action-link",
+        "urgent-secret-request-plus-strong-link"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "mfa-code-request"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://example-login.invalid/verify",
+          "score": 39,
+          "warningCodes": [
+            "display-mismatch",
+            "url-word",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PH-03",
+      "track": "regression",
+      "group": "phishing",
+      "signalFocus": null,
+      "description": "Credential verification request plus strong destination mismatch",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 74,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 39,
+        "wording": 10,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 39,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [
+        "credential-plus-strong-link"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "url-word",
+        "brand-domain-inconsistency",
+        "account-threat",
+        "credential-request",
+        "credential-plus-strong-link"
+      ],
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://example-login.invalid/signin",
+          "score": 39,
+          "warningCodes": [
+            "display-mismatch",
+            "url-word",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PH-04",
+      "track": "regression",
+      "group": "phishing",
+      "signalFocus": null,
+      "description": "Sender inconsistency plus strong suspicious link should corroborate to High concern",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 73,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 35,
+        "wording": 0,
+        "combinations": 15,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 35,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://example-login.invalid/",
+          "score": 35,
+          "warningCodes": [
+            "display-mismatch",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PH-05",
+      "track": "regression",
+      "group": "phishing",
+      "signalFocus": null,
+      "description": "Brand/domain inconsistency plus sender mismatch should be strongly corroborating",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 73,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 35,
+        "wording": 0,
+        "combinations": 15,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 35,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "brand-domain-inconsistency",
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://micros0ft-login.invalid/",
+          "score": 35,
+          "warningCodes": [
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PH-06",
+      "track": "regression",
+      "group": "phishing",
+      "signalFocus": null,
+      "description": "Account threat, urgency and shortener should reach at least Caution",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 37,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 7,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 15,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "shortener",
+        "urgency",
+        "account-threat"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "account-threat"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://bit.ly/example",
+          "score": 15,
+          "warningCodes": [
+            "shortener"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PH-07",
+      "track": "regression",
+      "group": "phishing",
+      "signalFocus": null,
+      "description": "Changed payment details with urgent payment pressure and link mismatch should reach High concern",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 79,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 39,
+        "wording": 15,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 39,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [
+        "urgency-action-link",
+        "changed-payment-plus-independent-concern"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "url-word",
+        "brand-domain-inconsistency",
+        "urgency",
+        "payment-pressure",
+        "changed-payment-details",
+        "urgency-action-link",
+        "changed-payment-plus-independent-concern"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://invoice-pay.invalid/payment",
+          "score": 39,
+          "warningCodes": [
+            "display-mismatch",
+            "url-word",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PH-08",
+      "track": "regression",
+      "group": "phishing",
+      "signalFocus": null,
+      "description": "Gift-card plus secrecy plus urgency should reach Caution even without a link",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 40,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [
+        "urgent-secret-gift-card-request"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "gift-card",
+        "secrecy-isolation",
+        "urgent-secret-gift-card-request"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "gift-card",
+        "secrecy-isolation"
+      ],
+      "links": []
+    },
+    {
+      "id": "PH-09",
+      "track": "regression",
+      "group": "phishing",
+      "signalFocus": null,
+      "description": "Remote-access pressure with urgency should reach Caution",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 35,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [
+        "urgent-remote-access-request"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "remote-access",
+        "urgent-remote-access-request"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "remote-access"
+      ],
+      "links": []
+    },
+    {
+      "id": "PH-10",
+      "track": "regression",
+      "group": "phishing",
+      "signalFocus": null,
+      "description": "Typosquat link plus credential request should reach High concern",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 74,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 39,
+        "wording": 10,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 39,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [
+        "credential-plus-strong-link"
+      ],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "url-word",
+        "brand-domain-inconsistency",
+        "account-threat",
+        "credential-request",
+        "credential-plus-strong-link"
+      ],
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://micros0ft.com/login",
+          "score": 39,
+          "warningCodes": [
+            "typosquat-domain",
+            "url-word",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PH-11",
+      "track": "regression",
+      "group": "phishing",
+      "signalFocus": null,
+      "description": "Password request plus urgency over HTTP but no strong identity mismatch should remain Caution, not auto-High",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 38,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 10,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 8,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [
+        "secret-request-plus-concerning-link"
+      ],
+      "evidenceCodes": [
+        "http",
+        "url-word",
+        "urgency",
+        "password-request",
+        "secret-request-plus-concerning-link"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "password-request"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "http://example.test/login",
+          "score": 8,
+          "warningCodes": [
+            "http",
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PH-12",
+      "track": "regression",
+      "group": "phishing",
+      "signalFocus": null,
+      "description": "Account compromise plus credential request plus weak URL terms should reach Review/Caution, not necessarily High",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 33,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 8,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "url-word",
+        "account-compromised",
+        "credential-request"
+      ],
+      "wordingMatches": [
+        "account-compromised",
+        "credential-request"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://example.test/account/verify/login",
+          "score": 8,
+          "warningCodes": [
+            "url-word",
+            "url-word",
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INV-01",
+      "track": "regression",
+      "group": "invariant",
+      "signalFocus": null,
+      "description": "Five visible copies of one destination must not behave like five independent suspicious destinations",
+      "status": "ACCEPTABLE",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 19,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "unknown"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 4,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 4,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 5,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "url-word"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://repeat.invalid/login",
+          "score": 4,
+          "warningCodes": [
+            "url-word"
+          ]
+        },
+        {
+          "id": "LINK-02",
+          "url": "https://repeat.invalid/login",
+          "score": 4,
+          "warningCodes": [
+            "url-word"
+          ]
+        },
+        {
+          "id": "LINK-03",
+          "url": "https://repeat.invalid/login",
+          "score": 4,
+          "warningCodes": [
+            "url-word"
+          ]
+        },
+        {
+          "id": "LINK-04",
+          "url": "https://repeat.invalid/login",
+          "score": 4,
+          "warningCodes": [
+            "url-word"
+          ]
+        },
+        {
+          "id": "LINK-05",
+          "url": "https://repeat.invalid/login",
+          "score": 4,
+          "warningCodes": [
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INV-02",
+      "track": "regression",
+      "group": "invariant",
+      "signalFocus": null,
+      "description": "Strong suspicious link must not be averaged down by many harmless links",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 54,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 39,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 39,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 8,
+        "uniqueDestinationCount": 8,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 8
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "display-mismatch",
+        "url-word",
+        "brand-domain-inconsistency"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://evil.invalid/login",
+          "score": 39,
+          "warningCodes": [
+            "display-mismatch",
+            "url-word",
+            "brand-domain-inconsistency"
+          ]
+        },
+        {
+          "id": "LINK-02",
+          "url": "https://example1.org/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-03",
+          "url": "https://example2.org/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-04",
+          "url": "https://example3.org/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-05",
+          "url": "https://example4.org/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-06",
+          "url": "https://example5.org/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-07",
+          "url": "https://example6.org/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-08",
+          "url": "https://example7.org/",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "INV-03",
+      "track": "regression",
+      "group": "invariant",
+      "signalFocus": null,
+      "description": "Official sender evidence cannot erase a strong suspicious link",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 50,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 39,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 39,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "display-mismatch",
+        "url-word",
+        "brand-domain-inconsistency",
+        "official-sender-domain"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://evil.invalid/login",
+          "score": 39,
+          "warningCodes": [
+            "display-mismatch",
+            "url-word",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INV-04",
+      "track": "regression",
+      "group": "invariant",
+      "signalFocus": null,
+      "description": "Aligned authentication cannot erase a strong suspicious link",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 49,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 39,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 39,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "display-mismatch",
+        "url-word",
+        "brand-domain-inconsistency",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://evil.invalid/login",
+          "score": 39,
+          "warningCodes": [
+            "display-mismatch",
+            "url-word",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INV-05",
+      "track": "regression",
+      "group": "invariant",
+      "signalFocus": null,
+      "description": "No evidence remains Not enough evidence rather than becoming reassuring",
+      "status": "PASS",
+      "actualState": "unknown",
+      "actualLabel": "NOT ENOUGH EVIDENCE",
+      "score": 15,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "scoreBandLabel": "Limited evidence",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "unknown"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [],
+      "wordingMatches": [],
+      "links": []
+    },
+    {
+      "id": "INV-06",
+      "track": "regression",
+      "group": "invariant",
+      "signalFocus": null,
+      "description": "Several weak wording observations should be capped below Caution",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 21,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 6,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 6
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "urgency",
+        "refund-reward",
+        "parcel-delivery",
+        "link-pressure",
+        "generic-greeting"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "refund-reward",
+        "parcel-delivery",
+        "link-pressure",
+        "generic-greeting"
+      ],
+      "links": []
+    },
+    {
+      "id": "INV-07",
+      "track": "regression",
+      "group": "invariant",
+      "signalFocus": null,
+      "description": "Several weak URL-shape clues should be capped below Caution",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 8,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "http",
+        "subdomains",
+        "port",
+        "url-word"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "http://a.b.c.d.e.example.test:8080/account/login/verify?campaign=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+          "score": 8,
+          "warningCodes": [
+            "http",
+            "subdomains",
+            "port",
+            "url-word",
+            "url-word",
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INV-08",
+      "track": "regression",
+      "group": "invariant",
+      "signalFocus": null,
+      "description": "Several weak suspicious destinations should not automatically become High concern",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 8,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 3,
+        "uniqueDestinationCount": 3,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 3
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "http",
+        "url-word"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "http://one.example.test/login",
+          "score": 8,
+          "warningCodes": [
+            "http",
+            "url-word"
+          ]
+        },
+        {
+          "id": "LINK-02",
+          "url": "http://two.example.test/account",
+          "score": 8,
+          "warningCodes": [
+            "http",
+            "url-word"
+          ]
+        },
+        {
+          "id": "LINK-03",
+          "url": "http://three.example.test/verify",
+          "score": 8,
+          "warningCodes": [
+            "http",
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INV-09",
+      "track": "regression",
+      "group": "invariant",
+      "signalFocus": null,
+      "description": "Several shorteners may escalate but should not automatically become High concern",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 34,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 19,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 15,
+        "multiLinkBonus": 4,
+        "suspiciousLinkCount": 3,
+        "visibleLinkCount": 3,
+        "uniqueDestinationCount": 3,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 3
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "shortener"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://bit.ly/a",
+          "score": 15,
+          "warningCodes": [
+            "shortener"
+          ]
+        },
+        {
+          "id": "LINK-02",
+          "url": "https://tinyurl.com/b",
+          "score": 15,
+          "warningCodes": [
+            "shortener"
+          ]
+        },
+        {
+          "id": "LINK-03",
+          "url": "https://t.co/c",
+          "score": 15,
+          "warningCodes": [
+            "shortener"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INV-10",
+      "track": "regression",
+      "group": "invariant",
+      "signalFocus": null,
+      "description": "One strong suspicious link plus many ordinary links remains at least Caution",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 54,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 39,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 39,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 11,
+        "uniqueDestinationCount": 11,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 11
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "display-mismatch",
+        "url-word",
+        "brand-domain-inconsistency"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://evil.invalid/login",
+          "score": 39,
+          "warningCodes": [
+            "display-mismatch",
+            "url-word",
+            "brand-domain-inconsistency"
+          ]
+        },
+        {
+          "id": "LINK-02",
+          "url": "https://normal1.example/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-03",
+          "url": "https://normal2.example/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-04",
+          "url": "https://normal3.example/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-05",
+          "url": "https://normal4.example/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-06",
+          "url": "https://normal5.example/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-07",
+          "url": "https://normal6.example/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-08",
+          "url": "https://normal7.example/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-09",
+          "url": "https://normal8.example/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-10",
+          "url": "https://normal9.example/",
+          "score": 0,
+          "warningCodes": []
+        },
+        {
+          "id": "LINK-11",
+          "url": "https://normal10.example/",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "INV-11",
+      "track": "regression",
+      "group": "invariant",
+      "signalFocus": null,
+      "description": "Critical threat evidence enforces High concern",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 70,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "minimumVerdict": "high",
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 30,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "known-phishing"
+      ],
+      "wordingMatches": [],
+      "links": []
+    },
+    {
+      "id": "INV-12",
+      "track": "regression",
+      "group": "invariant",
+      "signalFocus": null,
+      "description": "Reassuring evidence cannot reduce critical threat evidence below High concern",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 70,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "minimumVerdict": "high",
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 30,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "known-phishing",
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "wordingMatches": [],
+      "links": []
+    },
+    {
+      "id": "CH-PASS-L",
+      "track": "challenge",
+      "group": "challenge-legitimate",
+      "signalFocus": "password-request",
+      "description": "Legitimate software instruction mentions entering a password in the locally opened application.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "password-request",
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "wordingMatches": [
+        "password-request"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-PASS-A",
+      "track": "challenge",
+      "group": "challenge-ambiguous",
+      "signalFocus": "password-request",
+      "description": "Password confirmation request without independent technical concerns.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "password-request"
+      ],
+      "wordingMatches": [
+        "password-request"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-PASS-P",
+      "track": "challenge",
+      "group": "challenge-phishing",
+      "signalFocus": "password-request",
+      "description": "Urgent password request with strong display/destination mismatch.",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 84,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 39,
+        "wording": 10,
+        "combinations": 20,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 39,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [
+        "credential-plus-strong-link",
+        "urgency-action-link",
+        "urgent-secret-request-plus-strong-link"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "url-word",
+        "brand-domain-inconsistency",
+        "urgency",
+        "password-request",
+        "credential-plus-strong-link",
+        "urgency-action-link",
+        "urgent-secret-request-plus-strong-link"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "password-request"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://example-login.invalid/signin",
+          "score": 39,
+          "warningCodes": [
+            "display-mismatch",
+            "url-word",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH-MFA-L",
+      "track": "challenge",
+      "group": "challenge-legitimate",
+      "signalFocus": "mfa-code-request",
+      "description": "Legitimate one-time-code delivery that tells the user to enter the code only in the app they already opened.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "mfa-code-request",
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-MFA-A",
+      "track": "challenge",
+      "group": "challenge-ambiguous",
+      "signalFocus": "mfa-code-request",
+      "description": "Message asks user to reply with a verification code but has no suspicious link.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "mfa-code-request"
+      ],
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-MFA-P",
+      "track": "challenge",
+      "group": "challenge-phishing",
+      "signalFocus": "mfa-code-request",
+      "description": "Urgent verification-code request with strong destination mismatch.",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 80,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 10,
+        "combinations": 20,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 35,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [
+        "credential-plus-strong-link",
+        "urgency-action-link",
+        "urgent-secret-request-plus-strong-link"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "urgency",
+        "mfa-code-request",
+        "credential-plus-strong-link",
+        "urgency-action-link",
+        "urgent-secret-request-plus-strong-link"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "mfa-code-request"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://example-login.invalid/mfa",
+          "score": 35,
+          "warningCodes": [
+            "display-mismatch",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH-PAYCHANGE-L",
+      "track": "challenge",
+      "group": "challenge-legitimate",
+      "signalFocus": "changed-payment-details",
+      "description": "Authenticated known supplier announces a bank-detail change without asking for immediate payment.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "changed-payment-details",
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-PAYCHANGE-A",
+      "track": "challenge",
+      "group": "challenge-ambiguous",
+      "signalFocus": "changed-payment-details",
+      "description": "Bank-detail change arrives without corroborating sender or link evidence.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "changed-payment-details"
+      ],
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-PAYCHANGE-P",
+      "track": "challenge",
+      "group": "challenge-phishing",
+      "signalFocus": "changed-payment-details",
+      "description": "Urgent payment diversion with changed bank details and sender-identity mismatch.",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 43,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 15,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [
+        "changed-payment-plus-independent-concern"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "urgency",
+        "payment-pressure",
+        "changed-payment-details",
+        "changed-payment-plus-independent-concern"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-GIFTCARD-L",
+      "track": "challenge",
+      "group": "challenge-legitimate",
+      "signalFocus": "gift-card",
+      "description": "Legitimate retailer promotion uses the phrase buy gift cards.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "gift-card",
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "wordingMatches": [
+        "gift-card"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-GIFTCARD-A",
+      "track": "challenge",
+      "group": "challenge-ambiguous",
+      "signalFocus": "gift-card",
+      "description": "Work-style gift-card request without urgency or secrecy.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "gift-card"
+      ],
+      "wordingMatches": [
+        "gift-card"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-GIFTCARD-P",
+      "track": "challenge",
+      "group": "challenge-phishing",
+      "signalFocus": "gift-card",
+      "description": "Classic urgent secret gift-card request asks for the card details.",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 40,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [
+        "urgent-secret-gift-card-request"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "card-payment-data",
+        "gift-card",
+        "secrecy-isolation",
+        "urgent-secret-gift-card-request"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "card-payment-data",
+        "gift-card",
+        "secrecy-isolation"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-SECRECY-L",
+      "track": "challenge",
+      "group": "challenge-legitimate",
+      "signalFocus": "secrecy-isolation",
+      "description": "Legitimate confidential-project wording with authenticated sender and no requested sensitive action.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "secrecy-isolation",
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "wordingMatches": [
+        "secrecy-isolation"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-SECRECY-A",
+      "track": "challenge",
+      "group": "challenge-ambiguous",
+      "signalFocus": "secrecy-isolation",
+      "description": "Bare secrecy request with no other technical evidence.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "secrecy-isolation"
+      ],
+      "wordingMatches": [
+        "secrecy-isolation"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-SECRECY-P",
+      "track": "challenge",
+      "group": "challenge-phishing",
+      "signalFocus": "secrecy-isolation",
+      "description": "Urgent secret request combined with sender mismatch.",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 38,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 10,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [
+        "urgent-secrecy-plus-identity"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "urgency",
+        "secrecy-isolation",
+        "urgent-secrecy-plus-identity"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "secrecy-isolation"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-REMOTE-L",
+      "track": "challenge",
+      "group": "challenge-legitimate",
+      "signalFocus": "remote-access",
+      "description": "Authenticated IT notice instructs the user to install an application from their normal company portal.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "remote-access",
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-REMOTE-A",
+      "track": "challenge",
+      "group": "challenge-ambiguous",
+      "signalFocus": "remote-access",
+      "description": "Remote-support tool request without an independent destination concern.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "remote-access"
+      ],
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-REMOTE-P",
+      "track": "challenge",
+      "group": "challenge-phishing",
+      "signalFocus": "remote-access",
+      "description": "Urgent remote-access instruction combined with password request.",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 40,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [
+        "urgent-remote-access-request"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "password-request",
+        "remote-access",
+        "urgent-remote-access-request"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "password-request",
+        "remote-access"
+      ],
+      "links": []
+    },
+    {
+      "id": "CH-DMARC-L",
+      "track": "challenge",
+      "group": "challenge-legitimate",
+      "signalFocus": "dmarc-fail",
+      "description": "Forwarded/list-style message has a DMARC failure but retained aligned DKIM evidence.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -2,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "auth-dkim-aligned"
+      ],
+      "wordingMatches": [],
+      "links": []
+    },
+    {
+      "id": "CH-DMARC-A",
+      "track": "challenge",
+      "group": "challenge-ambiguous",
+      "signalFocus": "dmarc-fail",
+      "description": "DMARC failure alone, with no suspicious wording or link.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 0,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 0,
+        "uniqueDestinationCount": 0,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 0
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "auth-dmarc-fail"
+      ],
+      "wordingMatches": [],
+      "links": []
+    },
+    {
+      "id": "CH-DMARC-P",
+      "track": "challenge",
+      "group": "challenge-phishing",
+      "signalFocus": "dmarc-fail",
+      "description": "DMARC failure corroborates a strong destination mismatch.",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 75,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 35,
+        "wording": 0,
+        "combinations": 15,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 35,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://example-login.invalid/",
+          "score": 35,
+          "warningCodes": [
+            "display-mismatch",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH-PUNY-L",
+      "track": "challenge",
+      "group": "challenge-legitimate",
+      "signalFocus": "punycode-link",
+      "description": "Internationalised-domain/punycode link without any other concern signal.",
+      "status": "ACCEPTABLE",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 35,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 20,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "punycode"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://xn--e1afmkfd.xn--p1ai/",
+          "score": 20,
+          "warningCodes": [
+            "punycode"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH-PUNY-A",
+      "track": "challenge",
+      "group": "challenge-ambiguous",
+      "signalFocus": "punycode-link",
+      "description": "Punycode destination plus urgency but no credential request.",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 37,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 20,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "punycode",
+        "urgency"
+      ],
+      "wordingMatches": [
+        "urgency"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://xn--e1afmkfd.xn--p1ai/notice",
+          "score": 20,
+          "warningCodes": [
+            "punycode"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH-PUNY-P",
+      "track": "challenge",
+      "group": "challenge-phishing",
+      "signalFocus": "punycode-link",
+      "description": "Punycode destination accompanies a credential-verification request.",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 49,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 24,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 24,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "punycode",
+        "url-word",
+        "account-threat",
+        "credential-request"
+      ],
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://xn--e1afmkfd.xn--p1ai/login",
+          "score": 24,
+          "warningCodes": [
+            "punycode",
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH-SHORT-L",
+      "track": "challenge",
+      "group": "challenge-legitimate",
+      "signalFocus": "shortener-link",
+      "description": "Authenticated event/news message uses a public URL shortener.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -7,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 15,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "shortener",
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://bit.ly/example",
+          "score": 15,
+          "warningCodes": [
+            "shortener"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH-SHORT-A",
+      "track": "challenge",
+      "group": "challenge-ambiguous",
+      "signalFocus": "shortener-link",
+      "description": "Shortened link plus urgency but no sensitive action request.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 32,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 15,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "shortener",
+        "urgency"
+      ],
+      "wordingMatches": [
+        "urgency"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://bit.ly/example",
+          "score": 15,
+          "warningCodes": [
+            "shortener"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH-SHORT-P",
+      "track": "challenge",
+      "group": "challenge-phishing",
+      "signalFocus": "shortener-link",
+      "description": "Shortened link, credential request and sender mismatch.",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 48,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 15,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 15,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 1,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "shortener",
+        "account-threat",
+        "credential-request"
+      ],
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "https://bit.ly/example",
+          "score": 15,
+          "warningCodes": [
+            "shortener"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH-HTTP-L",
+      "track": "challenge",
+      "group": "challenge-legitimate",
+      "signalFocus": "http-link",
+      "description": "Authenticated sender links to a legacy HTTP help page without sensitive wording.",
+      "status": "PASS",
+      "actualState": "unknown",
+      "actualLabel": "NOT ENOUGH EVIDENCE",
+      "score": 14,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "scoreBandLabel": "Limited evidence",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "unknown"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -9,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 8,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "http",
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "wordingMatches": [],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "http://example.test/help",
+          "score": 8,
+          "warningCodes": [
+            "http"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH-HTTP-A",
+      "track": "challenge",
+      "group": "challenge-ambiguous",
+      "signalFocus": "http-link",
+      "description": "HTTP destination accompanies an account-threat message but no credential request.",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "linkSummary": {
+        "highestLinkScore": 8,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [],
+      "evidenceCodes": [
+        "http",
+        "account-threat"
+      ],
+      "wordingMatches": [
+        "account-threat"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "http://example.test/notice",
+          "score": 8,
+          "warningCodes": [
+            "http"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH-HTTP-P",
+      "track": "challenge",
+      "group": "challenge-phishing",
+      "signalFocus": "http-link",
+      "description": "HTTP destination with urgent password request but no strong destination-identity mismatch.",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 38,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "minimumVerdict": null,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 10,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "linkSummary": {
+        "highestLinkScore": 8,
+        "multiLinkBonus": 0,
+        "suspiciousLinkCount": 0,
+        "visibleLinkCount": 1,
+        "uniqueDestinationCount": 1,
+        "recognisedDestinationCount": 0,
+        "destinationCount": 1
+      },
+      "combinationCodes": [
+        "secret-request-plus-concerning-link"
+      ],
+      "evidenceCodes": [
+        "http",
+        "url-word",
+        "urgency",
+        "password-request",
+        "secret-request-plus-concerning-link"
+      ],
+      "wordingMatches": [
+        "urgency",
+        "password-request"
+      ],
+      "links": [
+        {
+          "id": "LINK-01",
+          "url": "http://example.test/login",
+          "score": 8,
+          "warningCodes": [
+            "http",
+            "url-word"
+          ]
+        }
+      ]
+    }
+  ]
+}

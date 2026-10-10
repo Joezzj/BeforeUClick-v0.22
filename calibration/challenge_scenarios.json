@@ -1,0 +1,1032 @@
+[
+  {
+    "id": "CH-PASS-L",
+    "track": "challenge",
+    "group": "challenge-legitimate",
+    "signalFocus": "password-request",
+    "description": "Legitimate software instruction mentions entering a password in the locally opened application.",
+    "input": {
+      "wordingText": "Open the desktop app from the Start menu and enter your password there to unlock your encrypted vault.",
+      "links": [],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "SPF aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "DKIM aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "DMARC pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-PASS-A",
+    "track": "challenge",
+    "group": "challenge-ambiguous",
+    "signalFocus": "password-request",
+    "description": "Password confirmation request without independent technical concerns.",
+    "input": {
+      "wordingText": "Confirm your password to continue.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-PASS-P",
+    "track": "challenge",
+    "group": "challenge-phishing",
+    "signalFocus": "password-request",
+    "description": "Urgent password request with strong display/destination mismatch.",
+    "input": {
+      "wordingText": "Urgent. Enter your password immediately to keep your account active.",
+      "links": [
+        {
+          "text": "https://microsoft.com",
+          "url": "https://example-login.invalid/signin"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-MFA-L",
+    "track": "challenge",
+    "group": "challenge-legitimate",
+    "signalFocus": "mfa-code-request",
+    "description": "Legitimate one-time-code delivery that tells the user to enter the code only in the app they already opened.",
+    "input": {
+      "wordingText": "Your verification code is 482193. Enter it only in the app you just opened. Never share this code with anyone.",
+      "links": [],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "SPF aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "DKIM aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "DMARC pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-MFA-A",
+    "track": "challenge",
+    "group": "challenge-ambiguous",
+    "signalFocus": "mfa-code-request",
+    "description": "Message asks user to reply with a verification code but has no suspicious link.",
+    "input": {
+      "wordingText": "Reply with your verification code so support can finish the request.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-MFA-P",
+    "track": "challenge",
+    "group": "challenge-phishing",
+    "signalFocus": "mfa-code-request",
+    "description": "Urgent verification-code request with strong destination mismatch.",
+    "input": {
+      "wordingText": "Urgent. Reply with your verification code now.",
+      "links": [
+        {
+          "text": "https://account.microsoft.com",
+          "url": "https://example-login.invalid/mfa"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-PAYCHANGE-L",
+    "track": "challenge",
+    "group": "challenge-legitimate",
+    "signalFocus": "changed-payment-details",
+    "description": "Authenticated known supplier announces a bank-detail change without asking for immediate payment.",
+    "input": {
+      "wordingText": "Our bank details have changed. Future invoices will show the new account. Please verify changes through your usual supplier contact before paying.",
+      "links": [],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "SPF aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "DKIM aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "DMARC pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-PAYCHANGE-A",
+    "track": "challenge",
+    "group": "challenge-ambiguous",
+    "signalFocus": "changed-payment-details",
+    "description": "Bank-detail change arrives without corroborating sender or link evidence.",
+    "input": {
+      "wordingText": "Our bank account has changed. Use our new account for the next invoice.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-PAYCHANGE-P",
+    "track": "challenge",
+    "group": "challenge-phishing",
+    "signalFocus": "changed-payment-details",
+    "description": "Urgent payment diversion with changed bank details and sender-identity mismatch.",
+    "input": {
+      "wordingText": "Urgent payment required. Our bank details have changed. Please pay this invoice to the new account today.",
+      "links": [],
+      "senderEvidence": [
+        {
+          "code": "sender-domain-mismatch",
+          "points": 8,
+          "strength": "medium",
+          "text": "Sender identity mismatch"
+        }
+      ],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-GIFTCARD-L",
+    "track": "challenge",
+    "group": "challenge-legitimate",
+    "signalFocus": "gift-card",
+    "description": "Legitimate retailer promotion uses the phrase buy gift cards.",
+    "input": {
+      "wordingText": "You can buy gift cards at reception during opening hours.",
+      "links": [],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "SPF aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "DKIM aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "DMARC pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-GIFTCARD-A",
+    "track": "challenge",
+    "group": "challenge-ambiguous",
+    "signalFocus": "gift-card",
+    "description": "Work-style gift-card request without urgency or secrecy.",
+    "input": {
+      "wordingText": "Please buy gift cards for the staff event and keep the receipts.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-GIFTCARD-P",
+    "track": "challenge",
+    "group": "challenge-phishing",
+    "signalFocus": "gift-card",
+    "description": "Classic urgent secret gift-card request asks for the card details.",
+    "input": {
+      "wordingText": "Urgent. Buy gift cards now, keep this a secret, and send a photo of the gift card number.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-SECRECY-L",
+    "track": "challenge",
+    "group": "challenge-legitimate",
+    "signalFocus": "secrecy-isolation",
+    "description": "Legitimate confidential-project wording with authenticated sender and no requested sensitive action.",
+    "input": {
+      "wordingText": "Keep this confidential until the product launch tomorrow. Do not discuss the announcement externally.",
+      "links": [],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "SPF aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "DKIM aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "DMARC pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-SECRECY-A",
+    "track": "challenge",
+    "group": "challenge-ambiguous",
+    "signalFocus": "secrecy-isolation",
+    "description": "Bare secrecy request with no other technical evidence.",
+    "input": {
+      "wordingText": "Keep this between you and me for now.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-SECRECY-P",
+    "track": "challenge",
+    "group": "challenge-phishing",
+    "signalFocus": "secrecy-isolation",
+    "description": "Urgent secret request combined with sender mismatch.",
+    "input": {
+      "wordingText": "Urgent. Keep this a secret and do not tell anyone until I contact you.",
+      "links": [],
+      "senderEvidence": [
+        {
+          "code": "sender-domain-mismatch",
+          "points": 8,
+          "strength": "medium",
+          "text": "Sender identity mismatch"
+        }
+      ],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-REMOTE-L",
+    "track": "challenge",
+    "group": "challenge-legitimate",
+    "signalFocus": "remote-access",
+    "description": "Authenticated IT notice instructs the user to install an application from their normal company portal.",
+    "input": {
+      "wordingText": "Install the application from Company Portal before Monday. You do not need to give anyone remote access.",
+      "links": [],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "SPF aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "DKIM aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "DMARC pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-REMOTE-A",
+    "track": "challenge",
+    "group": "challenge-ambiguous",
+    "signalFocus": "remote-access",
+    "description": "Remote-support tool request without an independent destination concern.",
+    "input": {
+      "wordingText": "Install AnyDesk so support can assist you remotely.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-REMOTE-P",
+    "track": "challenge",
+    "group": "challenge-phishing",
+    "signalFocus": "remote-access",
+    "description": "Urgent remote-access instruction combined with password request.",
+    "input": {
+      "wordingText": "Urgent. Install AnyDesk and enter your password when support asks.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-DMARC-L",
+    "track": "challenge",
+    "group": "challenge-legitimate",
+    "signalFocus": "dmarc-fail",
+    "description": "Forwarded/list-style message has a DMARC failure but retained aligned DKIM evidence.",
+    "input": {
+      "wordingText": "Forwarded meeting notes attached below.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [
+        {
+          "code": "auth-dmarc-fail",
+          "points": 12,
+          "strength": "strong",
+          "text": "DMARC failed"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "DKIM aligned"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-DMARC-A",
+    "track": "challenge",
+    "group": "challenge-ambiguous",
+    "signalFocus": "dmarc-fail",
+    "description": "DMARC failure alone, with no suspicious wording or link.",
+    "input": {
+      "wordingText": "Here is the document you requested.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [
+        {
+          "code": "auth-dmarc-fail",
+          "points": 12,
+          "strength": "strong",
+          "text": "DMARC failed"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-DMARC-P",
+    "track": "challenge",
+    "group": "challenge-phishing",
+    "signalFocus": "dmarc-fail",
+    "description": "DMARC failure corroborates a strong destination mismatch.",
+    "input": {
+      "wordingText": "Review your account.",
+      "links": [
+        {
+          "text": "https://microsoft.com",
+          "url": "https://example-login.invalid/"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [
+        {
+          "code": "auth-dmarc-fail",
+          "points": 12,
+          "strength": "strong",
+          "text": "DMARC failed"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-PUNY-L",
+    "track": "challenge",
+    "group": "challenge-legitimate",
+    "signalFocus": "punycode-link",
+    "description": "Internationalised-domain/punycode link without any other concern signal.",
+    "input": {
+      "wordingText": "Visit the community website.",
+      "links": [
+        {
+          "text": "Community site",
+          "url": "https://xn--e1afmkfd.xn--p1ai/"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-PUNY-A",
+    "track": "challenge",
+    "group": "challenge-ambiguous",
+    "signalFocus": "punycode-link",
+    "description": "Punycode destination plus urgency but no credential request.",
+    "input": {
+      "wordingText": "Urgent. Please review the page today.",
+      "links": [
+        {
+          "text": "Review page",
+          "url": "https://xn--e1afmkfd.xn--p1ai/notice"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-PUNY-P",
+    "track": "challenge",
+    "group": "challenge-phishing",
+    "signalFocus": "punycode-link",
+    "description": "Punycode destination accompanies a credential-verification request.",
+    "input": {
+      "wordingText": "Verify your account to continue.",
+      "links": [
+        {
+          "text": "Verify account",
+          "url": "https://xn--e1afmkfd.xn--p1ai/login"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-SHORT-L",
+    "track": "challenge",
+    "group": "challenge-legitimate",
+    "signalFocus": "shortener-link",
+    "description": "Authenticated event/news message uses a public URL shortener.",
+    "input": {
+      "wordingText": "Event details are available here.",
+      "links": [
+        {
+          "text": "Event details",
+          "url": "https://bit.ly/example"
+        }
+      ],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "SPF aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "DKIM aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "DMARC pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-SHORT-A",
+    "track": "challenge",
+    "group": "challenge-ambiguous",
+    "signalFocus": "shortener-link",
+    "description": "Shortened link plus urgency but no sensitive action request.",
+    "input": {
+      "wordingText": "Urgent. Please read this update today.",
+      "links": [
+        {
+          "text": "Read update",
+          "url": "https://bit.ly/example"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-SHORT-P",
+    "track": "challenge",
+    "group": "challenge-phishing",
+    "signalFocus": "shortener-link",
+    "description": "Shortened link, credential request and sender mismatch.",
+    "input": {
+      "wordingText": "Verify your account to continue.",
+      "links": [
+        {
+          "text": "Verify",
+          "url": "https://bit.ly/example"
+        }
+      ],
+      "senderEvidence": [
+        {
+          "code": "sender-domain-mismatch",
+          "points": 8,
+          "strength": "medium",
+          "text": "Sender identity mismatch"
+        }
+      ],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-HTTP-L",
+    "track": "challenge",
+    "group": "challenge-legitimate",
+    "signalFocus": "http-link",
+    "description": "Authenticated sender links to a legacy HTTP help page without sensitive wording.",
+    "input": {
+      "wordingText": "The legacy help page is available here.",
+      "links": [
+        {
+          "text": "Help page",
+          "url": "http://example.test/help"
+        }
+      ],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "SPF aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "DKIM aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "DMARC pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "unknown"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-HTTP-A",
+    "track": "challenge",
+    "group": "challenge-ambiguous",
+    "signalFocus": "http-link",
+    "description": "HTTP destination accompanies an account-threat message but no credential request.",
+    "input": {
+      "wordingText": "Your account will be suspended if you do not review this notice.",
+      "links": [
+        {
+          "text": "Review notice",
+          "url": "http://example.test/notice"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "CH-HTTP-P",
+    "track": "challenge",
+    "group": "challenge-phishing",
+    "signalFocus": "http-link",
+    "description": "HTTP destination with urgent password request but no strong destination-identity mismatch.",
+    "input": {
+      "wordingText": "Urgent. Enter your password to keep your account active.",
+      "links": [
+        {
+          "text": "Continue",
+          "url": "http://example.test/login"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  }
+]

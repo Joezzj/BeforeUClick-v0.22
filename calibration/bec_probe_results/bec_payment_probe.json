@@ -1,0 +1,1425 @@
+{
+  "generatedAt": "2026-10-01T19:33:28.302Z",
+  "probeRevision": "0.22.5-bec-payment-probe-v2",
+  "scenarioCount": 22,
+  "scoringModelRevision": "0.22.17-auth-identity-family",
+  "scoringModel": {
+    "revision": "0.22.17-auth-identity-family",
+    "baseUncertaintyScore": 15,
+    "identityCap": 30,
+    "linkCap": 45,
+    "wordingCap": 15,
+    "combinationCap": 20,
+    "weakIdentityCap": 8,
+    "weakLinkCap": 8,
+    "weakWordingCap": 6,
+    "reassuranceCap": 12,
+    "reassuranceCapWhenMediumConcern": 7,
+    "reassuranceCapWhenStrongConcern": 5,
+    "totalCap": 100,
+    "criticalMinimum": 70,
+    "thresholds": {
+      "noConcernsMax": 9,
+      "review": 17,
+      "reviewStrong": 25,
+      "caution": 35,
+      "cautionStrong": 45,
+      "high": 60
+    }
+  },
+  "purpose": "Focused BEC / changed-payment development probe. Use clusters, not individual cases, to decide whether production scoring needs a targeted rule.",
+  "totals": {
+    "total": 22,
+    "PASS": 21,
+    "ACCEPTABLE": 1,
+    "FAIL": 0,
+    "majorStateMiss": 0,
+    "scoreRangeOutside": 0,
+    "states": {
+      "review": 8,
+      "no-concerns": 1,
+      "unknown": 1,
+      "caution": 10,
+      "high": 2
+    },
+    "bands": {
+      "review-suggested": 5,
+      "reassuring": 1,
+      "limited-evidence": 1,
+      "review-recommended": 3,
+      "caution-advised": 6,
+      "strong-caution": 4,
+      "high-concern": 2
+    },
+    "scoreMin": 3,
+    "scoreMax": 99,
+    "scoreMedian": 35
+  },
+  "groupSummary": {
+    "bec-legitimate": {
+      "total": 5,
+      "PASS": 5,
+      "ACCEPTABLE": 0,
+      "FAIL": 0,
+      "majorStateMiss": 0,
+      "scoreRangeOutside": 0,
+      "states": {
+        "review": 3,
+        "no-concerns": 1,
+        "unknown": 1
+      },
+      "bands": {
+        "review-suggested": 3,
+        "reassuring": 1,
+        "limited-evidence": 1
+      },
+      "scoreMin": 3,
+      "scoreMax": 21,
+      "scoreMedian": 18
+    },
+    "bec-ambiguous": {
+      "total": 7,
+      "PASS": 7,
+      "ACCEPTABLE": 0,
+      "FAIL": 0,
+      "majorStateMiss": 0,
+      "scoreRangeOutside": 0,
+      "states": {
+        "review": 4,
+        "caution": 3
+      },
+      "bands": {
+        "review-suggested": 2,
+        "review-recommended": 2,
+        "caution-advised": 3
+      },
+      "scoreMin": 20,
+      "scoreMax": 38,
+      "scoreMedian": 28
+    },
+    "bec-phishing": {
+      "total": 10,
+      "PASS": 9,
+      "ACCEPTABLE": 1,
+      "FAIL": 0,
+      "majorStateMiss": 0,
+      "scoreRangeOutside": 0,
+      "states": {
+        "caution": 7,
+        "high": 2,
+        "review": 1
+      },
+      "bands": {
+        "caution-advised": 3,
+        "strong-caution": 4,
+        "high-concern": 2,
+        "review-recommended": 1
+      },
+      "scoreMin": 34,
+      "scoreMax": 99,
+      "scoreMedian": 48.5
+    }
+  },
+  "results": [
+    {
+      "id": "BEC-L01",
+      "group": "bec-legitimate",
+      "theme": "future-change-verify",
+      "family": "legitimate-control",
+      "description": "Known supplier announces future bank-detail changes but explicitly tells the recipient not to change payment until independently verified.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 21,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        15,
+        30
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -2,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-known-local"
+      ],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "BEC-L02",
+      "group": "bec-legitimate",
+      "theme": "authenticated-future-change",
+      "family": "legitimate-control",
+      "description": "Authenticated known supplier announces a future payment-detail change without asking for an immediate transfer.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        8,
+        28
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown",
+        "no-concerns"
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-known-local"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-pass-aligned",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "BEC-L03",
+      "group": "bec-legitimate",
+      "theme": "internal-warning",
+      "family": "legitimate-control",
+      "description": "Internal finance warning quotes a supplier bank-change request while instructing staff not to pay until verified.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        10,
+        30
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-known-local"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-pass-aligned",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "BEC-L04",
+      "group": "bec-legitimate",
+      "theme": "ordinary-invoice-control",
+      "family": "legitimate-control",
+      "description": "Ordinary authenticated invoice reminder acts as a no-bank-change control.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "no-concerns",
+      "actualLabel": "NO OBVIOUS CONCERNS",
+      "score": 3,
+      "scoreDerivedState": "no-concerns",
+      "scoreBand": "reassuring",
+      "scoreBandLabel": "Reassuring",
+      "scoreRange": [
+        0,
+        24
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review",
+        "no-concerns"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -12,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-official-domain"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-pass-aligned",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://www.xero.com/",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "BEC-L05",
+      "group": "bec-legitimate",
+      "theme": "overdue-pay-today-control",
+      "family": "legitimate-control",
+      "description": "Authenticated known supplier sends a normal overdue invoice reminder with pay-today wording and no changed bank details or independent concern.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "unknown",
+      "actualLabel": "NOT ENOUGH EVIDENCE",
+      "score": 13,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "scoreBandLabel": "Limited evidence",
+      "scoreRange": [
+        0,
+        24
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review",
+        "unknown",
+        "no-concerns"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": -7,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-known-local"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-pass-aligned",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "BEC-A01",
+      "group": "bec-ambiguous",
+      "theme": "changed-details-only",
+      "family": "changed-payment-ladder",
+      "description": "Unknown supplier-like message announces changed bank details with no urgency, link or independent corroboration.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        20,
+        34
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "BEC-A02",
+      "group": "bec-ambiguous",
+      "theme": "changed-plus-urgency",
+      "family": "changed-payment-ladder",
+      "description": "Changed bank details are paired with urgency but no link, identity mismatch or secrecy.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "scoreRange": [
+        23,
+        38
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "changed-payment-details"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "BEC-A03",
+      "group": "bec-ambiguous",
+      "theme": "changed-plus-pay-today",
+      "family": "changed-payment-ladder",
+      "description": "Changed payment details are paired with a request to pay today, but there is no link or identity corroboration.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "scoreRange": [
+        25,
+        40
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "BEC-A04",
+      "group": "bec-ambiguous",
+      "theme": "changed-plus-weak-link",
+      "family": "changed-payment-ladder",
+      "description": "Changed payment details and pay-today wording are paired with a weak URL-shape warning only.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 37,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "scoreRange": [
+        28,
+        45
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 4,
+        "wording": 13,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "combinationCodes": [
+        "changed-payment-plus-independent-concern"
+      ],
+      "linkEvidence": [
+        {
+          "url": "https://invoice-pay.invalid/payment",
+          "score": 4,
+          "warningCodes": [
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BEC-A05",
+      "group": "bec-ambiguous",
+      "theme": "changed-plus-replyto",
+      "family": "changed-payment-ladder",
+      "description": "Changed bank details are paired with a Reply-To inconsistency but no suspicious destination.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 35,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "scoreRange": [
+        28,
+        45
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 12,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [
+        "reply-domain-mismatch"
+      ],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "BEC-A06",
+      "group": "bec-ambiguous",
+      "theme": "changed-plus-shortener",
+      "family": "changed-payment-ladder",
+      "description": "Changed payment details are paired with an obscured short-link payment destination but no other corroboration.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 38,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "scoreRange": [
+        32,
+        50
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://bit.ly/example",
+          "score": 15,
+          "warningCodes": [
+            "shortener"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BEC-A07",
+      "group": "bec-ambiguous",
+      "theme": "unknown-overdue-pay-today",
+      "family": "payment-pressure-control",
+      "description": "Unknown supplier sends an overdue pay-today reminder, but there is no changed account, identity inconsistency, secrecy or concerning destination.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 20,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        17,
+        30
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "BEC-P01",
+      "group": "bec-phishing",
+      "theme": "urgent-changed-weak-link",
+      "family": "phishing-probe",
+      "description": "Urgent changed-payment request and pay-today wording are paired with a weak suspicious invoice URL, mirroring the open validation finding.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 39,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "scoreRange": [
+        35,
+        50
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 4,
+        "wording": 15,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "combinationCodes": [
+        "changed-payment-plus-independent-concern"
+      ],
+      "linkEvidence": [
+        {
+          "url": "https://invoice-pay.invalid/payment",
+          "score": 4,
+          "warningCodes": [
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BEC-P02",
+      "group": "bec-phishing",
+      "theme": "urgent-changed-secrecy",
+      "family": "phishing-probe",
+      "description": "Urgent bank-change request also tells the recipient to keep the payment change confidential.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 35,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "scoreRange": [
+        35,
+        55
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "changed-payment-details",
+        "secrecy-isolation"
+      ],
+      "combinationCodes": [
+        "changed-payment-plus-independent-concern"
+      ],
+      "linkEvidence": []
+    },
+    {
+      "id": "BEC-P03",
+      "group": "bec-phishing",
+      "theme": "changed-payment-replyto",
+      "family": "phishing-probe",
+      "description": "Changed payment details and payment pressure are paired with a Reply-To mismatch.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 47,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "scoreRange": [
+        35,
+        55
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 12,
+        "links": 0,
+        "wording": 15,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [
+        "reply-domain-mismatch"
+      ],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "combinationCodes": [
+        "changed-payment-plus-independent-concern"
+      ],
+      "linkEvidence": []
+    },
+    {
+      "id": "BEC-P04",
+      "group": "bec-phishing",
+      "theme": "changed-payment-http",
+      "family": "phishing-probe",
+      "description": "Urgent changed-payment request points to a plain-HTTP payment page.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 43,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "scoreRange": [
+        35,
+        55
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 15,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "combinationCodes": [
+        "changed-payment-plus-independent-concern"
+      ],
+      "linkEvidence": [
+        {
+          "url": "http://example.test/payment",
+          "score": 8,
+          "warningCodes": [
+            "http",
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BEC-P05",
+      "group": "bec-phishing",
+      "theme": "changed-payment-shortener",
+      "family": "phishing-probe",
+      "description": "Urgent changed-payment request points to a shortened payment URL.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 50,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "scoreRange": [
+        40,
+        60
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 15,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "combinationCodes": [
+        "changed-payment-plus-independent-concern"
+      ],
+      "linkEvidence": [
+        {
+          "url": "https://bit.ly/example",
+          "score": 15,
+          "warningCodes": [
+            "shortener"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BEC-P06",
+      "group": "bec-phishing",
+      "theme": "changed-payment-display-mismatch",
+      "family": "phishing-probe",
+      "description": "Urgent changed-payment request uses a displayed supplier URL that resolves to a different payment domain.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 79,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "scoreRange": [
+        50,
+        90
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 39,
+        "wording": 15,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "combinationCodes": [
+        "urgency-action-link",
+        "changed-payment-plus-independent-concern"
+      ],
+      "linkEvidence": [
+        {
+          "url": "https://invoice-pay.invalid/payment",
+          "score": 39,
+          "warningCodes": [
+            "display-mismatch",
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BEC-P07",
+      "group": "bec-phishing",
+      "theme": "changed-payment-dmarc-fail",
+      "family": "phishing-probe",
+      "description": "Urgent changed-payment request is accompanied by a DMARC failure.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 55,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "scoreRange": [
+        35,
+        65
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 20,
+        "links": 0,
+        "wording": 15,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [
+        "auth-spf-fail",
+        "auth-dkim-fail",
+        "auth-dmarc-fail"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "combinationCodes": [
+        "changed-payment-plus-independent-concern"
+      ],
+      "linkEvidence": []
+    },
+    {
+      "id": "BEC-P08",
+      "group": "bec-phishing",
+      "theme": "compromised-authenticated-account",
+      "family": "phishing-probe",
+      "description": "A fully authenticated known supplier account sends an urgent changed-payment request to a weak suspicious payment URL, modelling account compromise.",
+      "provider": "gmail",
+      "status": "ACCEPTABLE",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 34,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "scoreRange": [
+        30,
+        50
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [
+        "no-concerns",
+        "unknown"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 4,
+        "wording": 15,
+        "combinations": 5,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-known-local"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-pass-aligned",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "combinationCodes": [
+        "changed-payment-plus-independent-concern"
+      ],
+      "linkEvidence": [
+        {
+          "url": "https://invoice-pay.invalid/payment",
+          "score": 4,
+          "warningCodes": [
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BEC-P09",
+      "group": "bec-phishing",
+      "theme": "changed-secrecy-replyto",
+      "family": "phishing-probe",
+      "description": "Urgent changed-payment request combines secrecy with a Reply-To mismatch and no link.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 52,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "scoreRange": [
+        35,
+        65
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 12,
+        "links": 0,
+        "wording": 15,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [
+        "reply-domain-mismatch"
+      ],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "changed-payment-details",
+        "secrecy-isolation"
+      ],
+      "combinationCodes": [
+        "changed-payment-plus-independent-concern",
+        "urgent-secrecy-plus-identity"
+      ],
+      "linkEvidence": []
+    },
+    {
+      "id": "BEC-P10",
+      "group": "bec-phishing",
+      "theme": "changed-strong-link-identity",
+      "family": "phishing-probe",
+      "description": "Changed-payment request combines urgency, sender inconsistency and a strong displayed-destination mismatch.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 99,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "scoreRange": [
+        55,
+        100
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 12,
+        "links": 39,
+        "wording": 15,
+        "combinations": 18,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [
+        "reply-domain-mismatch"
+      ],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "combinationCodes": [
+        "identity-plus-strong-link",
+        "urgency-action-link",
+        "changed-payment-plus-independent-concern"
+      ],
+      "linkEvidence": [
+        {
+          "url": "https://invoice-pay.invalid/payment",
+          "score": 39,
+          "warningCodes": [
+            "display-mismatch",
+            "url-word"
+          ]
+        }
+      ]
+    }
+  ]
+}

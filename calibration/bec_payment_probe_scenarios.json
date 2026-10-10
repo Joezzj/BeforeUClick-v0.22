@@ -1,0 +1,778 @@
+[
+  {
+    "id": "BEC-L01",
+    "group": "bec-legitimate",
+    "theme": "future-change-verify",
+    "family": "legitimate-control",
+    "description": "Known supplier announces future bank-detail changes but explicitly tells the recipient not to change payment until independently verified.",
+    "email": {
+      "provider": "outlook",
+      "sender": "accounts@supplier.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Bank details for future invoices",
+      "body": "Our bank details have changed for future invoices. Do not change any payment until you have verified the new details using our usual phone number.",
+      "links": [],
+      "knownSender": true
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "scoreRange": [
+        15,
+        30
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "BEC-L02",
+    "group": "bec-legitimate",
+    "theme": "authenticated-future-change",
+    "family": "legitimate-control",
+    "description": "Authenticated known supplier announces a future payment-detail change without asking for an immediate transfer.",
+    "email": {
+      "provider": "gmail",
+      "sender": "accounts@supplier.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Payment details changing next month",
+      "body": "Our bank details have changed for invoices issued from next month. No payment action is required today. Please verify the change with your usual contact before updating your records.",
+      "links": [],
+      "knownSender": true,
+      "auth": {
+        "spf": "pass",
+        "spfDomain": "supplier.example",
+        "dkim": "pass",
+        "dkimDomain": "supplier.example",
+        "dmarc": "pass",
+        "dmarcDomain": "supplier.example"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown",
+        "no-concerns"
+      ],
+      "scoreRange": [
+        8,
+        28
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "BEC-L03",
+    "group": "bec-legitimate",
+    "theme": "internal-warning",
+    "family": "legitimate-control",
+    "description": "Internal finance warning quotes a supplier bank-change request while instructing staff not to pay until verified.",
+    "email": {
+      "provider": "outlook",
+      "sender": "finance@company.example",
+      "senderName": "Finance Team",
+      "subject": "Verify supplier bank changes before payment",
+      "body": "A supplier has told us their bank details have changed. Do not use any new payment details until Finance verifies the request by phone. No payment should be made from this message.",
+      "links": [],
+      "knownSender": true,
+      "auth": {
+        "spf": "pass",
+        "spfDomain": "company.example",
+        "dkim": "pass",
+        "dkimDomain": "company.example",
+        "dmarc": "pass",
+        "dmarcDomain": "company.example"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "scoreRange": [
+        10,
+        30
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "BEC-L04",
+    "group": "bec-legitimate",
+    "theme": "ordinary-invoice-control",
+    "family": "legitimate-control",
+    "description": "Ordinary authenticated invoice reminder acts as a no-bank-change control.",
+    "email": {
+      "provider": "gmail",
+      "sender": "notifications@xero.com",
+      "senderName": "Xero",
+      "subject": "Invoice reminder",
+      "body": "An invoice is due this week. Review it in Xero before making payment.",
+      "links": [
+        {
+          "text": "View in Xero",
+          "url": "https://www.xero.com/"
+        }
+      ],
+      "auth": {
+        "spf": "pass",
+        "spfDomain": "xero.com",
+        "dkim": "pass",
+        "dkimDomain": "xero.com",
+        "dmarc": "pass",
+        "dmarcDomain": "xero.com"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "review",
+        "no-concerns"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "scoreRange": [
+        0,
+        24
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "BEC-L05",
+    "group": "bec-legitimate",
+    "theme": "overdue-pay-today-control",
+    "family": "legitimate-control",
+    "description": "Authenticated known supplier sends a normal overdue invoice reminder with pay-today wording and no changed bank details or independent concern.",
+    "email": {
+      "provider": "gmail",
+      "sender": "accounts@supplier.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Overdue invoice reminder",
+      "body": "Your invoice is overdue. Please pay this invoice today using the usual account details on your invoice.",
+      "links": [],
+      "knownSender": true,
+      "auth": {
+        "spf": "pass",
+        "spfDomain": "supplier.example",
+        "dkim": "pass",
+        "dkimDomain": "supplier.example",
+        "dmarc": "pass",
+        "dmarcDomain": "supplier.example"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "review",
+        "unknown",
+        "no-concerns"
+      ],
+      "acceptableStates": [],
+      "scoreRange": [
+        0,
+        24
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "BEC-A01",
+    "group": "bec-ambiguous",
+    "theme": "changed-details-only",
+    "family": "changed-payment-ladder",
+    "description": "Unknown supplier-like message announces changed bank details with no urgency, link or independent corroboration.",
+    "email": {
+      "provider": "outlook",
+      "sender": "accounts@supplier-billing.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Updated bank details",
+      "body": "Our bank details have changed. Future invoices will use our new payment details.",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        20,
+        34
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "BEC-A02",
+    "group": "bec-ambiguous",
+    "theme": "changed-plus-urgency",
+    "family": "changed-payment-ladder",
+    "description": "Changed bank details are paired with urgency but no link, identity mismatch or secrecy.",
+    "email": {
+      "provider": "outlook",
+      "sender": "accounts@supplier-billing.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Urgent bank details update",
+      "body": "Urgent. Our bank details have changed. Please update the payment details today.",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        23,
+        38
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "BEC-A03",
+    "group": "bec-ambiguous",
+    "theme": "changed-plus-pay-today",
+    "family": "changed-payment-ladder",
+    "description": "Changed payment details are paired with a request to pay today, but there is no link or identity corroboration.",
+    "email": {
+      "provider": "gmail",
+      "sender": "accounts@supplier-billing.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Updated invoice payment",
+      "body": "Our bank details have changed. Please pay this invoice today using the new payment details.",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        25,
+        40
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "BEC-A04",
+    "group": "bec-ambiguous",
+    "theme": "changed-plus-weak-link",
+    "family": "changed-payment-ladder",
+    "description": "Changed payment details and pay-today wording are paired with a weak URL-shape warning only.",
+    "email": {
+      "provider": "outlook",
+      "sender": "accounts@supplier-billing.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Updated invoice payment",
+      "body": "Our bank details have changed. Please pay this invoice today using the new payment details below.",
+      "links": [
+        {
+          "text": "Supplier invoice portal",
+          "url": "https://invoice-pay.invalid/payment"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "scoreRange": [
+        28,
+        45
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "BEC-A05",
+    "group": "bec-ambiguous",
+    "theme": "changed-plus-replyto",
+    "family": "changed-payment-ladder",
+    "description": "Changed bank details are paired with a Reply-To inconsistency but no suspicious destination.",
+    "email": {
+      "provider": "gmail",
+      "sender": "accounts@supplier.example",
+      "senderName": "Supplier Accounts",
+      "subject": "New bank account",
+      "body": "Our bank details have changed. Please use the new account for the next invoice.",
+      "links": [],
+      "replyTo": "payments@other.example"
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "scoreRange": [
+        28,
+        45
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "BEC-A06",
+    "group": "bec-ambiguous",
+    "theme": "changed-plus-shortener",
+    "family": "changed-payment-ladder",
+    "description": "Changed payment details are paired with an obscured short-link payment destination but no other corroboration.",
+    "email": {
+      "provider": "outlook",
+      "sender": "accounts@supplier-billing.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Updated payment portal",
+      "body": "Our bank details have changed. Use the new payment details shown in the portal.",
+      "links": [
+        {
+          "text": "Payment portal",
+          "url": "https://bit.ly/example"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "scoreRange": [
+        32,
+        50
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "BEC-A07",
+    "group": "bec-ambiguous",
+    "theme": "unknown-overdue-pay-today",
+    "family": "payment-pressure-control",
+    "description": "Unknown supplier sends an overdue pay-today reminder, but there is no changed account, identity inconsistency, secrecy or concerning destination.",
+    "email": {
+      "provider": "outlook",
+      "sender": "accounts@supplier-billing.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Overdue invoice",
+      "body": "Your invoice is overdue. Please pay this invoice today using the account details shown on the invoice.",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "scoreRange": [
+        17,
+        30
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "BEC-P01",
+    "group": "bec-phishing",
+    "theme": "urgent-changed-weak-link",
+    "family": "phishing-probe",
+    "description": "Urgent changed-payment request and pay-today wording are paired with a weak suspicious invoice URL, mirroring the open validation finding.",
+    "email": {
+      "provider": "outlook",
+      "sender": "accounts@supplier-billing.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Updated invoice payment",
+      "body": "Urgent. Our bank details have changed. Please pay this invoice today using the new payment details below.",
+      "links": [
+        {
+          "text": "Supplier invoice portal",
+          "url": "https://invoice-pay.invalid/payment"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [],
+      "scoreRange": [
+        35,
+        50
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ]
+    }
+  },
+  {
+    "id": "BEC-P02",
+    "group": "bec-phishing",
+    "theme": "urgent-changed-secrecy",
+    "family": "phishing-probe",
+    "description": "Urgent bank-change request also tells the recipient to keep the payment change confidential.",
+    "email": {
+      "provider": "gmail",
+      "sender": "finance@supplier-billing.example",
+      "senderName": "Supplier Finance",
+      "subject": "Confidential payment update",
+      "body": "Urgent. Our bank details have changed. Use the new account for today's payment and keep this confidential until the transfer is complete.",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "scoreRange": [
+        35,
+        55
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ]
+    }
+  },
+  {
+    "id": "BEC-P03",
+    "group": "bec-phishing",
+    "theme": "changed-payment-replyto",
+    "family": "phishing-probe",
+    "description": "Changed payment details and payment pressure are paired with a Reply-To mismatch.",
+    "email": {
+      "provider": "gmail",
+      "sender": "accounts@supplier.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Urgent invoice payment",
+      "body": "Our bank details have changed. Please pay this invoice today using the new payment details.",
+      "links": [],
+      "replyTo": "paymentdesk@other.example"
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "scoreRange": [
+        35,
+        55
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ]
+    }
+  },
+  {
+    "id": "BEC-P04",
+    "group": "bec-phishing",
+    "theme": "changed-payment-http",
+    "family": "phishing-probe",
+    "description": "Urgent changed-payment request points to a plain-HTTP payment page.",
+    "email": {
+      "provider": "outlook",
+      "sender": "accounts@supplier-billing.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Updated invoice payment",
+      "body": "Urgent. Our bank details have changed. Please pay this invoice today using the new payment details below.",
+      "links": [
+        {
+          "text": "Supplier payment portal",
+          "url": "http://example.test/payment"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [],
+      "scoreRange": [
+        35,
+        55
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ]
+    }
+  },
+  {
+    "id": "BEC-P05",
+    "group": "bec-phishing",
+    "theme": "changed-payment-shortener",
+    "family": "phishing-probe",
+    "description": "Urgent changed-payment request points to a shortened payment URL.",
+    "email": {
+      "provider": "outlook",
+      "sender": "accounts@supplier-billing.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Updated invoice payment",
+      "body": "Urgent. Our bank details have changed. Please pay this invoice today using the new payment details below.",
+      "links": [
+        {
+          "text": "Supplier payment portal",
+          "url": "https://bit.ly/example"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "scoreRange": [
+        40,
+        60
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ]
+    }
+  },
+  {
+    "id": "BEC-P06",
+    "group": "bec-phishing",
+    "theme": "changed-payment-display-mismatch",
+    "family": "phishing-probe",
+    "description": "Urgent changed-payment request uses a displayed supplier URL that resolves to a different payment domain.",
+    "email": {
+      "provider": "gmail",
+      "sender": "accounts@supplier-billing.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Updated invoice payment",
+      "body": "Urgent. Our bank details have changed. Please pay this invoice today using the new payment details below.",
+      "links": [
+        {
+          "text": "https://supplier.example/payment",
+          "url": "https://invoice-pay.invalid/payment"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        50,
+        90
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ]
+    }
+  },
+  {
+    "id": "BEC-P07",
+    "group": "bec-phishing",
+    "theme": "changed-payment-dmarc-fail",
+    "family": "phishing-probe",
+    "description": "Urgent changed-payment request is accompanied by a DMARC failure.",
+    "email": {
+      "provider": "gmail",
+      "sender": "accounts@supplier.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Urgent bank details update",
+      "body": "Urgent. Our bank details have changed. Please pay this invoice today using the new payment details.",
+      "links": [],
+      "auth": {
+        "spf": "fail",
+        "spfDomain": "other.example",
+        "dkim": "fail",
+        "dkimDomain": "other.example",
+        "dmarc": "fail",
+        "dmarcDomain": "supplier.example"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "scoreRange": [
+        35,
+        65
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ]
+    }
+  },
+  {
+    "id": "BEC-P08",
+    "group": "bec-phishing",
+    "theme": "compromised-authenticated-account",
+    "family": "phishing-probe",
+    "description": "A fully authenticated known supplier account sends an urgent changed-payment request to a weak suspicious payment URL, modelling account compromise.",
+    "email": {
+      "provider": "gmail",
+      "sender": "accounts@supplier.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Urgent invoice payment change",
+      "body": "Urgent. Our bank details have changed. Please pay this invoice today using the new payment details below.",
+      "links": [
+        {
+          "text": "Supplier invoice portal",
+          "url": "https://invoice-pay.invalid/payment"
+        }
+      ],
+      "knownSender": true,
+      "auth": {
+        "spf": "pass",
+        "spfDomain": "supplier.example",
+        "dkim": "pass",
+        "dkimDomain": "supplier.example",
+        "dmarc": "pass",
+        "dmarcDomain": "supplier.example"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "scoreRange": [
+        30,
+        50
+      ],
+      "forbiddenStates": [
+        "no-concerns",
+        "unknown"
+      ]
+    }
+  },
+  {
+    "id": "BEC-P09",
+    "group": "bec-phishing",
+    "theme": "changed-secrecy-replyto",
+    "family": "phishing-probe",
+    "description": "Urgent changed-payment request combines secrecy with a Reply-To mismatch and no link.",
+    "email": {
+      "provider": "outlook",
+      "sender": "finance@supplier.example",
+      "senderName": "Supplier Finance",
+      "subject": "Confidential payment change",
+      "body": "Urgent. Our bank details have changed. Use the new account for today's payment and keep this confidential until the transfer is complete.",
+      "links": [],
+      "replyTo": "paymentdesk@other.example"
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "scoreRange": [
+        35,
+        65
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ]
+    }
+  },
+  {
+    "id": "BEC-P10",
+    "group": "bec-phishing",
+    "theme": "changed-strong-link-identity",
+    "family": "phishing-probe",
+    "description": "Changed-payment request combines urgency, sender inconsistency and a strong displayed-destination mismatch.",
+    "email": {
+      "provider": "gmail",
+      "sender": "accounts@supplier.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Urgent invoice payment change",
+      "body": "Urgent. Our bank details have changed. Please pay this invoice today using the new payment details below.",
+      "links": [
+        {
+          "text": "https://supplier.example/payment",
+          "url": "https://invoice-pay.invalid/payment"
+        }
+      ],
+      "replyTo": "paymentdesk@other.example"
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        55,
+        100
+      ],
+      "forbiddenStates": [
+        "unknown",
+        "no-concerns"
+      ]
+    }
+  }
+]

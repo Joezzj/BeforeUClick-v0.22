@@ -1,0 +1,5470 @@
+{
+  "generatedAt": "2026-10-01T19:33:28.114Z",
+  "scoringModelRevision": "0.22.17-auth-identity-family",
+  "signalCount": 19,
+  "singleCount": 19,
+  "pairCount": 171,
+  "singleStateDistribution": {
+    "review": 14,
+    "caution": 3,
+    "unknown": 2
+  },
+  "pairStateDistribution": {
+    "review": 100,
+    "caution": 54,
+    "unknown": 6,
+    "high": 10,
+    "no-concerns": 1
+  },
+  "singleScoreBandDistribution": {
+    "review-suggested": 11,
+    "review-recommended": 3,
+    "caution-advised": 1,
+    "strong-caution": 2,
+    "limited-evidence": 2
+  },
+  "pairScoreBandDistribution": {
+    "review-suggested": 22,
+    "review-recommended": 78,
+    "caution-advised": 25,
+    "strong-caution": 29,
+    "limited-evidence": 6,
+    "high-concern": 10,
+    "reassuring": 1
+  },
+  "reviewFlagCount": 1,
+  "singleReviewFlagCount": 1,
+  "pairReviewFlagCount": 0,
+  "singles": [
+    {
+      "signal": "urgency",
+      "profile": "weak",
+      "state": "review",
+      "score": 17,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency"
+      ],
+      "evidenceCodes": [
+        "urgency"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "account-threat",
+      "profile": "medium",
+      "state": "review",
+      "score": 20,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat"
+      ],
+      "evidenceCodes": [
+        "account-threat"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "credential-request",
+      "profile": "credential",
+      "state": "review",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "credential-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "password-request",
+      "profile": "context-strong",
+      "state": "review",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request"
+      ],
+      "evidenceCodes": [
+        "password-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "mfa-request",
+      "profile": "context-strong",
+      "state": "review",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "mfa-code-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "payment-pressure",
+      "profile": "medium",
+      "state": "review",
+      "score": 20,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "payment-pressure"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "changed-payment",
+      "profile": "context-strong",
+      "state": "review",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "gift-card",
+      "profile": "context-strong",
+      "state": "review",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "secrecy",
+      "profile": "context-strong",
+      "state": "review",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "remote-access",
+      "profile": "context-strong",
+      "state": "review",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "http-link",
+      "profile": "weak",
+      "state": "review",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "http"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "shortener-link",
+      "profile": "medium",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "shortener"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "punycode-link",
+      "profile": "medium-review",
+      "state": "caution",
+      "score": 35,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "punycode"
+      ],
+      "combinations": [],
+      "reviewReasons": [
+        "medium structural signal alone reaches Caution; human calibration review requested"
+      ]
+    },
+    {
+      "signal": "display-mismatch",
+      "profile": "strong-destination",
+      "state": "caution",
+      "score": 50,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "typosquat-link",
+      "profile": "strong-destination",
+      "state": "caution",
+      "score": 50,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "identity-mismatch",
+      "profile": "identity",
+      "state": "review",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "sender-domain-mismatch"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "dmarc-fail",
+      "profile": "auth-strong",
+      "state": "review",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "auth-dmarc-fail"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "official-sender",
+      "profile": "positive",
+      "state": "unknown",
+      "score": 11,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "signal": "aligned-auth",
+      "profile": "positive",
+      "state": "unknown",
+      "score": 10,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    }
+  ],
+  "pairs": [
+    {
+      "a": "urgency",
+      "b": "account-threat",
+      "state": "review",
+      "score": 22,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 7,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency",
+        "account-threat"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "account-threat"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "credential-request",
+      "state": "review",
+      "score": 27,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 12,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency",
+        "account-threat",
+        "credential-request"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "account-threat",
+        "credential-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "password-request",
+      "state": "review",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency",
+        "password-request"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "password-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "mfa-request",
+      "state": "review",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency",
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "mfa-code-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "payment-pressure",
+      "state": "review",
+      "score": 22,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 7,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency",
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "payment-pressure"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "changed-payment",
+      "state": "review",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency",
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "gift-card",
+      "state": "review",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency",
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "secrecy",
+      "state": "review",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency",
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "remote-access",
+      "state": "caution",
+      "score": 35,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency",
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "remote-access",
+        "urgent-remote-access-request"
+      ],
+      "combinations": [
+        "urgent-remote-access-request"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "http-link",
+      "state": "review",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency"
+      ],
+      "evidenceCodes": [
+        "http",
+        "urgency"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "shortener-link",
+      "state": "review",
+      "score": 32,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency"
+      ],
+      "evidenceCodes": [
+        "shortener",
+        "urgency"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "punycode-link",
+      "state": "caution",
+      "score": 37,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency"
+      ],
+      "evidenceCodes": [
+        "punycode",
+        "urgency"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "display-mismatch",
+      "state": "caution",
+      "score": 52,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "urgency"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "typosquat-link",
+      "state": "caution",
+      "score": 52,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency"
+      ],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "urgency"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "identity-mismatch",
+      "state": "review",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "urgency"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "dmarc-fail",
+      "state": "review",
+      "score": 27,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency"
+      ],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "urgency"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "official-sender",
+      "state": "unknown",
+      "score": 13,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "urgency",
+      "b": "aligned-auth",
+      "state": "unknown",
+      "score": 12,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "wordingMatches": [
+        "urgency"
+      ],
+      "evidenceCodes": [
+        "urgency",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "credential-request",
+      "state": "review",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "credential-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "password-request",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "password-request"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "password-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "mfa-request",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "mfa-code-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "payment-pressure",
+      "state": "review",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "payment-pressure"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "changed-payment",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "gift-card",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "secrecy",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "remote-access",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "http-link",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat"
+      ],
+      "evidenceCodes": [
+        "http",
+        "account-threat"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "shortener-link",
+      "state": "caution",
+      "score": 35,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat"
+      ],
+      "evidenceCodes": [
+        "shortener",
+        "account-threat"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "punycode-link",
+      "state": "caution",
+      "score": 40,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat"
+      ],
+      "evidenceCodes": [
+        "punycode",
+        "account-threat"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "display-mismatch",
+      "state": "caution",
+      "score": 55,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "account-threat"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "typosquat-link",
+      "state": "caution",
+      "score": 55,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat"
+      ],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "account-threat"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "identity-mismatch",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "account-threat"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "dmarc-fail",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat"
+      ],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "account-threat"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "official-sender",
+      "state": "unknown",
+      "score": 16,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "account-threat",
+      "b": "aligned-auth",
+      "state": "unknown",
+      "score": 15,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "password-request",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request",
+        "password-request"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "credential-request",
+        "password-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "mfa-request",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request",
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "credential-request",
+        "mfa-code-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "payment-pressure",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request",
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "credential-request",
+        "payment-pressure"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "changed-payment",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request",
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "credential-request",
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "gift-card",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request",
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "credential-request",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "secrecy",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request",
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "credential-request",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "remote-access",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request",
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "credential-request",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "http-link",
+      "state": "review",
+      "score": 33,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "evidenceCodes": [
+        "http",
+        "account-threat",
+        "credential-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "shortener-link",
+      "state": "caution",
+      "score": 40,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "evidenceCodes": [
+        "shortener",
+        "account-threat",
+        "credential-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "punycode-link",
+      "state": "caution",
+      "score": 45,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "evidenceCodes": [
+        "punycode",
+        "account-threat",
+        "credential-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "display-mismatch",
+      "state": "high",
+      "score": 70,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 10,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "account-threat",
+        "credential-request",
+        "credential-plus-strong-link"
+      ],
+      "combinations": [
+        "credential-plus-strong-link"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "typosquat-link",
+      "state": "high",
+      "score": 70,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 10,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "account-threat",
+        "credential-request",
+        "credential-plus-strong-link"
+      ],
+      "combinations": [
+        "credential-plus-strong-link"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "identity-mismatch",
+      "state": "review",
+      "score": 33,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "account-threat",
+        "credential-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "dmarc-fail",
+      "state": "caution",
+      "score": 35,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "account-threat",
+        "credential-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "official-sender",
+      "state": "review",
+      "score": 21,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "credential-request",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "credential-request",
+      "b": "aligned-auth",
+      "state": "review",
+      "score": 20,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 10,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "account-threat",
+        "credential-request"
+      ],
+      "evidenceCodes": [
+        "account-threat",
+        "credential-request",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "mfa-request",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request",
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "password-request",
+        "mfa-code-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "payment-pressure",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request",
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "password-request",
+        "payment-pressure"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "changed-payment",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request",
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "password-request",
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "gift-card",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request",
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "password-request",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "secrecy",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request",
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "password-request",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "remote-access",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request",
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "password-request",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "http-link",
+      "state": "caution",
+      "score": 36,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 8,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request"
+      ],
+      "evidenceCodes": [
+        "http",
+        "password-request",
+        "secret-request-plus-concerning-link"
+      ],
+      "combinations": [
+        "secret-request-plus-concerning-link"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "shortener-link",
+      "state": "caution",
+      "score": 43,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 8,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request"
+      ],
+      "evidenceCodes": [
+        "shortener",
+        "password-request",
+        "secret-request-plus-concerning-link"
+      ],
+      "combinations": [
+        "secret-request-plus-concerning-link"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "punycode-link",
+      "state": "caution",
+      "score": 48,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 8,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request"
+      ],
+      "evidenceCodes": [
+        "punycode",
+        "password-request",
+        "secret-request-plus-concerning-link"
+      ],
+      "combinations": [
+        "secret-request-plus-concerning-link"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "display-mismatch",
+      "state": "high",
+      "score": 68,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 8,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "password-request",
+        "credential-plus-strong-link"
+      ],
+      "combinations": [
+        "credential-plus-strong-link"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "typosquat-link",
+      "state": "high",
+      "score": 68,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 8,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request"
+      ],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "password-request",
+        "credential-plus-strong-link"
+      ],
+      "combinations": [
+        "credential-plus-strong-link"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "identity-mismatch",
+      "state": "review",
+      "score": 31,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "password-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "dmarc-fail",
+      "state": "review",
+      "score": 33,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request"
+      ],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "password-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "official-sender",
+      "state": "review",
+      "score": 19,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request"
+      ],
+      "evidenceCodes": [
+        "password-request",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "password-request",
+      "b": "aligned-auth",
+      "state": "review",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "password-request"
+      ],
+      "evidenceCodes": [
+        "password-request",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "payment-pressure",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request",
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "mfa-code-request",
+        "payment-pressure"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "changed-payment",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request",
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "mfa-code-request",
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "gift-card",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request",
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "mfa-code-request",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "secrecy",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request",
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "mfa-code-request",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "remote-access",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request",
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "mfa-code-request",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "http-link",
+      "state": "caution",
+      "score": 36,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 8,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "http",
+        "mfa-code-request",
+        "secret-request-plus-concerning-link"
+      ],
+      "combinations": [
+        "secret-request-plus-concerning-link"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "shortener-link",
+      "state": "caution",
+      "score": 43,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 8,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "shortener",
+        "mfa-code-request",
+        "secret-request-plus-concerning-link"
+      ],
+      "combinations": [
+        "secret-request-plus-concerning-link"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "punycode-link",
+      "state": "caution",
+      "score": 48,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 8,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "punycode",
+        "mfa-code-request",
+        "secret-request-plus-concerning-link"
+      ],
+      "combinations": [
+        "secret-request-plus-concerning-link"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "display-mismatch",
+      "state": "high",
+      "score": 68,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 8,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "mfa-code-request",
+        "credential-plus-strong-link"
+      ],
+      "combinations": [
+        "credential-plus-strong-link"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "typosquat-link",
+      "state": "high",
+      "score": 68,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 8,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "mfa-code-request",
+        "credential-plus-strong-link"
+      ],
+      "combinations": [
+        "credential-plus-strong-link"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "identity-mismatch",
+      "state": "review",
+      "score": 31,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "mfa-code-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "dmarc-fail",
+      "state": "review",
+      "score": 33,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "mfa-code-request"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "official-sender",
+      "state": "review",
+      "score": 19,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "mfa-code-request",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "mfa-request",
+      "b": "aligned-auth",
+      "state": "review",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "evidenceCodes": [
+        "mfa-code-request",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "payment-pressure",
+      "b": "changed-payment",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "payment-pressure",
+      "b": "gift-card",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure",
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "payment-pressure",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "payment-pressure",
+      "b": "secrecy",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure",
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "payment-pressure",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "payment-pressure",
+      "b": "remote-access",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure",
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "payment-pressure",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "payment-pressure",
+      "b": "http-link",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "http",
+        "payment-pressure"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "payment-pressure",
+      "b": "shortener-link",
+      "state": "caution",
+      "score": 35,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "shortener",
+        "payment-pressure"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "payment-pressure",
+      "b": "punycode-link",
+      "state": "caution",
+      "score": 40,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "punycode",
+        "payment-pressure"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "payment-pressure",
+      "b": "display-mismatch",
+      "state": "caution",
+      "score": 55,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "payment-pressure"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "payment-pressure",
+      "b": "typosquat-link",
+      "state": "caution",
+      "score": 55,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "payment-pressure"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "payment-pressure",
+      "b": "identity-mismatch",
+      "state": "review",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "payment-pressure"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "payment-pressure",
+      "b": "dmarc-fail",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "payment-pressure"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "payment-pressure",
+      "b": "official-sender",
+      "state": "unknown",
+      "score": 16,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "payment-pressure",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "payment-pressure",
+      "b": "aligned-auth",
+      "state": "unknown",
+      "score": 15,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "evidenceCodes": [
+        "payment-pressure",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "changed-payment",
+      "b": "gift-card",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "changed-payment-details",
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "changed-payment-details",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "changed-payment",
+      "b": "secrecy",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "changed-payment-details",
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "changed-payment-details",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "changed-payment",
+      "b": "remote-access",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "changed-payment-details",
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "changed-payment-details",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "changed-payment",
+      "b": "http-link",
+      "state": "review",
+      "score": 31,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "http",
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "changed-payment",
+      "b": "shortener-link",
+      "state": "caution",
+      "score": 38,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "shortener",
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "changed-payment",
+      "b": "punycode-link",
+      "state": "caution",
+      "score": 43,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "punycode",
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "changed-payment",
+      "b": "display-mismatch",
+      "state": "caution",
+      "score": 58,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "changed-payment",
+      "b": "typosquat-link",
+      "state": "caution",
+      "score": 58,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "changed-payment",
+      "b": "identity-mismatch",
+      "state": "review",
+      "score": 31,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "changed-payment",
+      "b": "dmarc-fail",
+      "state": "review",
+      "score": 33,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "changed-payment-details"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "changed-payment",
+      "b": "official-sender",
+      "state": "review",
+      "score": 19,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "changed-payment-details",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "changed-payment",
+      "b": "aligned-auth",
+      "state": "review",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "evidenceCodes": [
+        "changed-payment-details",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "gift-card",
+      "b": "secrecy",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "gift-card",
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "gift-card",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "gift-card",
+      "b": "remote-access",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "gift-card",
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "gift-card",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "gift-card",
+      "b": "http-link",
+      "state": "review",
+      "score": 31,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "http",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "gift-card",
+      "b": "shortener-link",
+      "state": "caution",
+      "score": 38,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "shortener",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "gift-card",
+      "b": "punycode-link",
+      "state": "caution",
+      "score": 43,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "punycode",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "gift-card",
+      "b": "display-mismatch",
+      "state": "caution",
+      "score": 58,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "gift-card",
+      "b": "typosquat-link",
+      "state": "caution",
+      "score": 58,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "gift-card",
+      "b": "identity-mismatch",
+      "state": "review",
+      "score": 31,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "gift-card",
+      "b": "dmarc-fail",
+      "state": "review",
+      "score": 33,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "gift-card"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "gift-card",
+      "b": "official-sender",
+      "state": "review",
+      "score": 19,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "gift-card",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "gift-card",
+      "b": "aligned-auth",
+      "state": "review",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "gift-card"
+      ],
+      "evidenceCodes": [
+        "gift-card",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "secrecy",
+      "b": "remote-access",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "secrecy-isolation",
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "secrecy-isolation",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "secrecy",
+      "b": "http-link",
+      "state": "review",
+      "score": 31,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "http",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "secrecy",
+      "b": "shortener-link",
+      "state": "caution",
+      "score": 38,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "shortener",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "secrecy",
+      "b": "punycode-link",
+      "state": "caution",
+      "score": 43,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "punycode",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "secrecy",
+      "b": "display-mismatch",
+      "state": "caution",
+      "score": 58,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "secrecy",
+      "b": "typosquat-link",
+      "state": "caution",
+      "score": 58,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "secrecy",
+      "b": "identity-mismatch",
+      "state": "review",
+      "score": 31,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "secrecy",
+      "b": "dmarc-fail",
+      "state": "review",
+      "score": 33,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "secrecy-isolation"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "secrecy",
+      "b": "official-sender",
+      "state": "review",
+      "score": 19,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "secrecy-isolation",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "secrecy",
+      "b": "aligned-auth",
+      "state": "review",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "secrecy-isolation"
+      ],
+      "evidenceCodes": [
+        "secrecy-isolation",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "remote-access",
+      "b": "http-link",
+      "state": "review",
+      "score": 31,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "http",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "remote-access",
+      "b": "shortener-link",
+      "state": "caution",
+      "score": 38,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "shortener",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "remote-access",
+      "b": "punycode-link",
+      "state": "caution",
+      "score": 43,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "punycode",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "remote-access",
+      "b": "display-mismatch",
+      "state": "caution",
+      "score": 58,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "remote-access",
+      "b": "typosquat-link",
+      "state": "caution",
+      "score": 58,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "remote-access",
+      "b": "identity-mismatch",
+      "state": "review",
+      "score": 31,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "remote-access",
+      "b": "dmarc-fail",
+      "state": "review",
+      "score": 33,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "remote-access"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "remote-access",
+      "b": "official-sender",
+      "state": "review",
+      "score": 19,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "remote-access",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "remote-access",
+      "b": "aligned-auth",
+      "state": "review",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "evidenceCodes": [
+        "remote-access",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "http-link",
+      "b": "shortener-link",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "shortener",
+        "http"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "http-link",
+      "b": "punycode-link",
+      "state": "caution",
+      "score": 35,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "punycode",
+        "http"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "http-link",
+      "b": "display-mismatch",
+      "state": "caution",
+      "score": 50,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "http"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "http-link",
+      "b": "typosquat-link",
+      "state": "caution",
+      "score": 50,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "http"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "http-link",
+      "b": "identity-mismatch",
+      "state": "review",
+      "score": 31,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 8,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "http"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "http-link",
+      "b": "dmarc-fail",
+      "state": "review",
+      "score": 33,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 8,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "http"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "http-link",
+      "b": "official-sender",
+      "state": "review",
+      "score": 19,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "http",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "http-link",
+      "b": "aligned-auth",
+      "state": "review",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "http",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "shortener-link",
+      "b": "punycode-link",
+      "state": "caution",
+      "score": 37,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 22,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "punycode",
+        "shortener"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "shortener-link",
+      "b": "display-mismatch",
+      "state": "caution",
+      "score": 52,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 37,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "shortener"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "shortener-link",
+      "b": "typosquat-link",
+      "state": "caution",
+      "score": 52,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 37,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "shortener"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "shortener-link",
+      "b": "identity-mismatch",
+      "state": "caution",
+      "score": 38,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 15,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "shortener"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "shortener-link",
+      "b": "dmarc-fail",
+      "state": "caution",
+      "score": 40,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 15,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "shortener"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "shortener-link",
+      "b": "official-sender",
+      "state": "review",
+      "score": 26,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "shortener",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "shortener-link",
+      "b": "aligned-auth",
+      "state": "review",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "shortener",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "punycode-link",
+      "b": "display-mismatch",
+      "state": "caution",
+      "score": 52,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 37,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "punycode"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "punycode-link",
+      "b": "typosquat-link",
+      "state": "caution",
+      "score": 52,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 37,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "punycode"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "punycode-link",
+      "b": "identity-mismatch",
+      "state": "caution",
+      "score": 43,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 20,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "punycode"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "punycode-link",
+      "b": "dmarc-fail",
+      "state": "caution",
+      "score": 45,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 20,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "punycode"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "punycode-link",
+      "b": "official-sender",
+      "state": "review",
+      "score": 31,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "punycode",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "punycode-link",
+      "b": "aligned-auth",
+      "state": "review",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "punycode",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "display-mismatch",
+      "b": "typosquat-link",
+      "state": "caution",
+      "score": 52,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 37,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "typosquat-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "display-mismatch",
+      "b": "identity-mismatch",
+      "state": "high",
+      "score": 73,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 35,
+        "wording": 0,
+        "combinations": 15,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "combinations": [
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "display-mismatch",
+      "b": "dmarc-fail",
+      "state": "high",
+      "score": 75,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 35,
+        "wording": 0,
+        "combinations": 15,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "combinations": [
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "display-mismatch",
+      "b": "official-sender",
+      "state": "caution",
+      "score": 46,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "display-mismatch",
+      "b": "aligned-auth",
+      "state": "caution",
+      "score": 45,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "display-mismatch",
+        "brand-domain-inconsistency",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "typosquat-link",
+      "b": "identity-mismatch",
+      "state": "high",
+      "score": 73,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 35,
+        "wording": 0,
+        "combinations": 15,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "combinations": [
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "typosquat-link",
+      "b": "dmarc-fail",
+      "state": "high",
+      "score": 75,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 35,
+        "wording": 0,
+        "combinations": 15,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "combinations": [
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "reviewReasons": []
+    },
+    {
+      "a": "typosquat-link",
+      "b": "official-sender",
+      "state": "caution",
+      "score": 46,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "typosquat-link",
+      "b": "aligned-auth",
+      "state": "caution",
+      "score": 45,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "typosquat-domain",
+        "brand-domain-inconsistency",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "identity-mismatch",
+      "b": "dmarc-fail",
+      "state": "review",
+      "score": 33,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 18,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "auth-dmarc-fail"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "identity-mismatch",
+      "b": "official-sender",
+      "state": "review",
+      "score": 19,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "identity-mismatch",
+      "b": "aligned-auth",
+      "state": "review",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 8,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "sender-domain-mismatch",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "dmarc-fail",
+      "b": "official-sender",
+      "state": "review",
+      "score": 21,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "official-sender-domain"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "dmarc-fail",
+      "b": "aligned-auth",
+      "state": "review",
+      "score": 20,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 10,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "auth-dmarc-fail",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    },
+    {
+      "a": "official-sender",
+      "b": "aligned-auth",
+      "state": "no-concerns",
+      "score": 6,
+      "scoreDerivedState": "no-concerns",
+      "scoreBand": "reassuring",
+      "minimumVerdict": null,
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -9,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "wordingMatches": [],
+      "evidenceCodes": [
+        "official-sender-domain",
+        "auth-spf-aligned",
+        "auth-dkim-aligned",
+        "auth-dmarc-pass"
+      ],
+      "combinations": [],
+      "reviewReasons": []
+    }
+  ]
+}

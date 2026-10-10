@@ -1,0 +1,1557 @@
+[
+  {
+    "id": "LEG-01",
+    "group": "legitimate",
+    "description": "Ordinary personal email with no recognised concern signals",
+    "input": {
+      "wordingText": "Hi, are we still meeting for lunch tomorrow?",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "unknown"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "LEG-02",
+    "group": "legitimate",
+    "description": "Official sender plus aligned authentication, no concerning content",
+    "input": {
+      "wordingText": "",
+      "links": [],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Spf Aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "Auth Dkim Aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Dmarc Pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "no-concerns"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "LEG-03",
+    "group": "legitimate",
+    "description": "Known sender with otherwise ordinary message",
+    "input": {
+      "wordingText": "Here are the notes from yesterday.",
+      "links": [],
+      "senderEvidence": [
+        {
+          "code": "known-local-sender",
+          "points": -2,
+          "strength": "positive",
+          "text": "Known Local Sender"
+        }
+      ],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "unknown"
+      ],
+      "acceptableStates": [
+        "no-concerns"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "LEG-04",
+    "group": "legitimate",
+    "description": "Legitimate security notification with official identity and official destination",
+    "input": {
+      "wordingText": "Security alert. Sign in to verify your account.",
+      "links": [
+        {
+          "text": "https://account.microsoft.com",
+          "url": "https://account.microsoft.com/"
+        }
+      ],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Spf Aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "Auth Dkim Aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Dmarc Pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown",
+        "no-concerns"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "LEG-05",
+    "group": "legitimate",
+    "description": "Legitimate password reset wording without asking the user to disclose a password",
+    "input": {
+      "wordingText": "You requested a password reset. Use the link below to choose a new password.",
+      "links": [
+        {
+          "text": "https://account.microsoft.com",
+          "url": "https://account.microsoft.com/"
+        }
+      ],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Spf Aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "Auth Dkim Aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Dmarc Pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "no-concerns"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "LEG-06",
+    "group": "legitimate",
+    "description": "Parcel notice with official destination and good identity evidence",
+    "input": {
+      "wordingText": "Your parcel is delayed. Track your parcel using the link below.",
+      "links": [
+        {
+          "text": "https://www.nzpost.co.nz",
+          "url": "https://www.nzpost.co.nz/tools/tracking"
+        }
+      ],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Spf Aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "Auth Dkim Aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Dmarc Pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "no-concerns"
+      ],
+      "acceptableStates": [
+        "unknown",
+        "review"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "LEG-07",
+    "group": "legitimate",
+    "description": "Legitimate invoice reminder with official identity",
+    "input": {
+      "wordingText": "Payment required for invoice 1042. Please review the invoice in your account.",
+      "links": [
+        {
+          "text": "https://www.xero.com",
+          "url": "https://www.xero.com/"
+        }
+      ],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Spf Aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "Auth Dkim Aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Dmarc Pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "LEG-08",
+    "group": "legitimate",
+    "description": "Long unknown marketing/tracking URL alone should remain informational rather than force Review",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "View offer",
+          "url": "https://news.example.org/very/long/campaign/path/that/contains/many/segments?utm_source=email&utm_medium=newsletter&utm_campaign=summer_sale_2026&subscriber=1234567890&tracking=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "unknown"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "LEG-09",
+    "group": "legitimate",
+    "description": "Recognised shared-hosting destination remains neutral rather than reassuring or dangerous",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "Project page",
+          "url": "https://sample-project.github.io/"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "unknown"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "LEG-10",
+    "group": "legitimate",
+    "description": "Forwarded-style authentication oddity with DKIM and DMARC reassurance should stay around Review",
+    "input": {
+      "wordingText": "",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-fail",
+          "points": 6,
+          "strength": "medium",
+          "text": "Auth Spf Fail"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "Auth Dkim Aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Dmarc Pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "LEG-11",
+    "group": "legitimate",
+    "description": "Single urgency phrase alone should remain in Not enough evidence",
+    "input": {
+      "wordingText": "This is urgent.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "unknown"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "LEG-12",
+    "group": "legitimate",
+    "description": "Ordinary QR mention alone should remain low-noise",
+    "input": {
+      "wordingText": "Scan the QR code on your ticket when you arrive.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "unknown"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "AMB-01",
+    "group": "ambiguous",
+    "description": "HTTP-only link should prompt review but not high concern",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "example.test",
+          "url": "http://example.test/"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "AMB-02",
+    "group": "ambiguous",
+    "description": "URL shortener alone is notable but not automatically high concern",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "Open",
+          "url": "https://bit.ly/example"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "AMB-03",
+    "group": "ambiguous",
+    "description": "Punycode destination is notable and may reach Review/Caution",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "Open",
+          "url": "https://xn--e1afmkfd.xn--p1ai/"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "AMB-04",
+    "group": "ambiguous",
+    "description": "Raw IP destination should reach at least Caution",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "Open",
+          "url": "https://192.0.2.40/login"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "AMB-05",
+    "group": "ambiguous",
+    "description": "Moderate sender identity inconsistency should land around Review",
+    "input": {
+      "wordingText": "",
+      "links": [],
+      "senderEvidence": [
+        {
+          "code": "sender-domain-mismatch",
+          "points": 8,
+          "strength": "medium",
+          "text": "Sender Domain Mismatch"
+        }
+      ],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "AMB-06",
+    "group": "ambiguous",
+    "description": "DMARC failure is a strong authentication concern",
+    "input": {
+      "wordingText": "",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [
+        {
+          "code": "auth-dmarc-fail",
+          "points": 12,
+          "strength": "strong",
+          "text": "Auth Dmarc Fail"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "AMB-07",
+    "group": "ambiguous",
+    "description": "Passed but unaligned authentication alone should remain low to moderate",
+    "input": {
+      "wordingText": "",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [
+        {
+          "code": "auth-domain-unaligned",
+          "points": 4,
+          "strength": "weak",
+          "text": "Auth Domain Unaligned"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "unknown"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "AMB-08",
+    "group": "ambiguous",
+    "description": "Direct password request without suspicious link should still deserve caution",
+    "input": {
+      "wordingText": "Please enter your password to continue.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "AMB-09",
+    "group": "ambiguous",
+    "description": "Direct MFA code request without suspicious link should still deserve caution",
+    "input": {
+      "wordingText": "Reply with your verification code.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "AMB-10",
+    "group": "ambiguous",
+    "description": "Changed payment details alone should deserve caution",
+    "input": {
+      "wordingText": "Our bank details have changed. Please use our new account.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "AMB-11",
+    "group": "ambiguous",
+    "description": "Gift-card request alone should deserve caution",
+    "input": {
+      "wordingText": "Please buy some gift cards and send a photo of the gift card.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "AMB-12",
+    "group": "ambiguous",
+    "description": "Remote-access request alone should deserve caution",
+    "input": {
+      "wordingText": "Install AnyDesk so our team can remotely access your computer.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "PH-01",
+    "group": "phishing",
+    "description": "TC-P01-style urgent password request plus displayed-destination mismatch",
+    "input": {
+      "wordingText": "Urgent: your account has been compromised. Enter your password immediately.",
+      "links": [
+        {
+          "text": "https://microsoft.com",
+          "url": "https://example-login.invalid/verify"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [
+        "display-mismatch",
+        "password-request",
+        "urgency"
+      ],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "PH-02",
+    "group": "phishing",
+    "description": "Urgent MFA-code request plus strong link mismatch",
+    "input": {
+      "wordingText": "Act now. Reply with your verification code immediately.",
+      "links": [
+        {
+          "text": "https://paypal.com",
+          "url": "https://example-login.invalid/verify"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [
+        "display-mismatch",
+        "mfa-code-request",
+        "urgency"
+      ],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "PH-03",
+    "group": "phishing",
+    "description": "Credential verification request plus strong destination mismatch",
+    "input": {
+      "wordingText": "Verify your account to continue.",
+      "links": [
+        {
+          "text": "https://microsoft.com",
+          "url": "https://example-login.invalid/signin"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [
+        "display-mismatch",
+        "credential-request"
+      ],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "PH-04",
+    "group": "phishing",
+    "description": "Sender inconsistency plus strong suspicious link should corroborate to High concern",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "https://microsoft.com",
+          "url": "https://example-login.invalid/"
+        }
+      ],
+      "senderEvidence": [
+        {
+          "code": "sender-domain-mismatch",
+          "points": 8,
+          "strength": "medium",
+          "text": "Sender Domain Mismatch"
+        }
+      ],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "PH-05",
+    "group": "phishing",
+    "description": "Brand/domain inconsistency plus sender mismatch should be strongly corroborating",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "Microsoft account",
+          "url": "https://micros0ft-login.invalid/"
+        }
+      ],
+      "senderEvidence": [
+        {
+          "code": "sender-domain-mismatch",
+          "points": 8,
+          "strength": "medium",
+          "text": "Sender Domain Mismatch"
+        }
+      ],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "PH-06",
+    "group": "phishing",
+    "description": "Account threat, urgency and shortener should reach at least Caution",
+    "input": {
+      "wordingText": "Urgent. Your account will be suspended unless you act now.",
+      "links": [
+        {
+          "text": "Verify",
+          "url": "https://bit.ly/example"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "PH-07",
+    "group": "phishing",
+    "description": "Changed payment details with urgent payment pressure and link mismatch should reach High concern",
+    "input": {
+      "wordingText": "Payment is overdue. Our bank details have changed. Pay immediately.",
+      "links": [
+        {
+          "text": "https://xero.com",
+          "url": "https://invoice-pay.invalid/payment"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "PH-08",
+    "group": "phishing",
+    "description": "Gift-card plus secrecy plus urgency should reach Caution even without a link",
+    "input": {
+      "wordingText": "Urgent. Buy gift cards today and keep this a secret.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "PH-09",
+    "group": "phishing",
+    "description": "Remote-access pressure with urgency should reach Caution",
+    "input": {
+      "wordingText": "Urgent: install AnyDesk immediately so support can remotely access your computer.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "PH-10",
+    "group": "phishing",
+    "description": "Typosquat link plus credential request should reach High concern",
+    "input": {
+      "wordingText": "Verify your account to continue.",
+      "links": [
+        {
+          "text": "Microsoft sign in",
+          "url": "https://micros0ft.com/login"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "PH-11",
+    "group": "phishing",
+    "description": "Password request plus urgency over HTTP but no strong identity mismatch should remain Caution, not auto-High",
+    "input": {
+      "wordingText": "Urgent. Enter your password immediately.",
+      "links": [
+        {
+          "text": "Continue",
+          "url": "http://example.test/login"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "PH-12",
+    "group": "phishing",
+    "description": "Account compromise plus credential request plus weak URL terms should reach Review/Caution, not necessarily High",
+    "input": {
+      "wordingText": "Security alert: suspicious activity. Verify your account.",
+      "links": [
+        {
+          "text": "Continue",
+          "url": "https://example.test/account/verify/login"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "INV-01",
+    "group": "invariant",
+    "description": "Five visible copies of one destination must not behave like five independent suspicious destinations",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "Button 1",
+          "url": "https://repeat.invalid/login"
+        },
+        {
+          "text": "Button 2",
+          "url": "https://repeat.invalid/login"
+        },
+        {
+          "text": "Button 3",
+          "url": "https://repeat.invalid/login"
+        },
+        {
+          "text": "Button 4",
+          "url": "https://repeat.invalid/login"
+        },
+        {
+          "text": "Button 5",
+          "url": "https://repeat.invalid/login"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "unknown"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "INV-02",
+    "group": "invariant",
+    "description": "Strong suspicious link must not be averaged down by many harmless links",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "https://microsoft.com",
+          "url": "https://evil.invalid/login"
+        },
+        {
+          "text": "Info 1",
+          "url": "https://example1.org/"
+        },
+        {
+          "text": "Info 2",
+          "url": "https://example2.org/"
+        },
+        {
+          "text": "Info 3",
+          "url": "https://example3.org/"
+        },
+        {
+          "text": "Info 4",
+          "url": "https://example4.org/"
+        },
+        {
+          "text": "Info 5",
+          "url": "https://example5.org/"
+        },
+        {
+          "text": "Info 6",
+          "url": "https://example6.org/"
+        },
+        {
+          "text": "Info 7",
+          "url": "https://example7.org/"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "INV-03",
+    "group": "invariant",
+    "description": "Official sender evidence cannot erase a strong suspicious link",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "https://microsoft.com",
+          "url": "https://evil.invalid/login"
+        }
+      ],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "INV-04",
+    "group": "invariant",
+    "description": "Aligned authentication cannot erase a strong suspicious link",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "https://microsoft.com",
+          "url": "https://evil.invalid/login"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Spf Aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "Auth Dkim Aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Dmarc Pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "INV-05",
+    "group": "invariant",
+    "description": "No evidence remains Not enough evidence rather than becoming reassuring",
+    "input": {
+      "wordingText": "",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "unknown"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "INV-06",
+    "group": "invariant",
+    "description": "Several weak wording observations should be capped below Caution",
+    "input": {
+      "wordingText": "Urgent. Click the link. Your parcel is delayed. Rewards points expire. Dear customer.",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "INV-07",
+    "group": "invariant",
+    "description": "Several weak URL-shape clues should be capped below Caution",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "Open",
+          "url": "http://a.b.c.d.e.example.test:8080/account/login/verify?campaign=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "INV-08",
+    "group": "invariant",
+    "description": "Several weak suspicious destinations should not automatically become High concern",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "A",
+          "url": "http://one.example.test/login"
+        },
+        {
+          "text": "B",
+          "url": "http://two.example.test/account"
+        },
+        {
+          "text": "C",
+          "url": "http://three.example.test/verify"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "INV-09",
+    "group": "invariant",
+    "description": "Several shorteners may escalate but should not automatically become High concern",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "A",
+          "url": "https://bit.ly/a"
+        },
+        {
+          "text": "B",
+          "url": "https://tinyurl.com/b"
+        },
+        {
+          "text": "C",
+          "url": "https://t.co/c"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "INV-10",
+    "group": "invariant",
+    "description": "One strong suspicious link plus many ordinary links remains at least Caution",
+    "input": {
+      "wordingText": "",
+      "links": [
+        {
+          "text": "https://microsoft.com",
+          "url": "https://evil.invalid/login"
+        },
+        {
+          "text": "Normal 1",
+          "url": "https://normal1.example/"
+        },
+        {
+          "text": "Normal 2",
+          "url": "https://normal2.example/"
+        },
+        {
+          "text": "Normal 3",
+          "url": "https://normal3.example/"
+        },
+        {
+          "text": "Normal 4",
+          "url": "https://normal4.example/"
+        },
+        {
+          "text": "Normal 5",
+          "url": "https://normal5.example/"
+        },
+        {
+          "text": "Normal 6",
+          "url": "https://normal6.example/"
+        },
+        {
+          "text": "Normal 7",
+          "url": "https://normal7.example/"
+        },
+        {
+          "text": "Normal 8",
+          "url": "https://normal8.example/"
+        },
+        {
+          "text": "Normal 9",
+          "url": "https://normal9.example/"
+        },
+        {
+          "text": "Normal 10",
+          "url": "https://normal10.example/"
+        }
+      ],
+      "senderEvidence": [],
+      "metadataEvidence": [],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "INV-11",
+    "group": "invariant",
+    "description": "Critical threat evidence enforces High concern",
+    "input": {
+      "wordingText": "",
+      "links": [],
+      "senderEvidence": [],
+      "metadataEvidence": [
+        {
+          "code": "known-phishing",
+          "points": 60,
+          "strength": "critical",
+          "text": "Known Phishing"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "INV-12",
+    "group": "invariant",
+    "description": "Reassuring evidence cannot reduce critical threat evidence below High concern",
+    "input": {
+      "wordingText": "",
+      "links": [],
+      "senderEvidence": [
+        {
+          "code": "official-sender-domain",
+          "points": -5,
+          "strength": "positive",
+          "text": "Official Sender Domain"
+        }
+      ],
+      "metadataEvidence": [
+        {
+          "code": "known-phishing",
+          "points": 60,
+          "strength": "critical",
+          "text": "Known Phishing"
+        },
+        {
+          "code": "auth-spf-aligned",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Spf Aligned"
+        },
+        {
+          "code": "auth-dkim-aligned",
+          "points": -3,
+          "strength": "positive",
+          "text": "Auth Dkim Aligned"
+        },
+        {
+          "code": "auth-dmarc-pass",
+          "points": -2,
+          "strength": "positive",
+          "text": "Auth Dmarc Pass"
+        }
+      ],
+      "bodyEvidence": []
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [],
+      "requiredEvidenceCodes": [],
+      "forbiddenStates": []
+    }
+  }
+]

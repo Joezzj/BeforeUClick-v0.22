@@ -1,0 +1,2506 @@
+{
+  "generatedAt": "2026-10-01T19:33:29.200Z",
+  "validationRevision": "0.22.3-independent-validation-v1",
+  "scenarioCount": 42,
+  "scoringModelRevision": "0.22.17-auth-identity-family",
+  "scoringModel": {
+    "revision": "0.22.17-auth-identity-family",
+    "baseUncertaintyScore": 15,
+    "identityCap": 30,
+    "linkCap": 45,
+    "wordingCap": 15,
+    "combinationCap": 20,
+    "weakIdentityCap": 8,
+    "weakLinkCap": 8,
+    "weakWordingCap": 6,
+    "reassuranceCap": 12,
+    "reassuranceCapWhenMediumConcern": 7,
+    "reassuranceCapWhenStrongConcern": 5,
+    "totalCap": 100,
+    "criticalMinimum": 70,
+    "thresholds": {
+      "noConcernsMax": 9,
+      "review": 17,
+      "reviewStrong": 25,
+      "caution": 35,
+      "cautionStrong": 45,
+      "high": 60
+    }
+  },
+  "purpose": "Independent whole-email validation. This dataset must not be used to tune production weights case-by-case.",
+  "totals": {
+    "total": 42,
+    "PASS": 36,
+    "ACCEPTABLE": 6,
+    "FAIL": 0,
+    "majorStateMiss": 0,
+    "scoreRangeOutside": 3,
+    "states": {
+      "unknown": 4,
+      "no-concerns": 4,
+      "review": 18,
+      "caution": 11,
+      "high": 5
+    },
+    "bands": {
+      "limited-evidence": 4,
+      "reassuring": 4,
+      "review-suggested": 11,
+      "review-recommended": 7,
+      "caution-advised": 7,
+      "high-concern": 5,
+      "strong-caution": 4
+    },
+    "scoreMin": 3,
+    "scoreMax": 100,
+    "scoreMedian": 26.5
+  },
+  "groupSummary": {
+    "validation-legitimate": {
+      "total": 14,
+      "PASS": 10,
+      "ACCEPTABLE": 4,
+      "FAIL": 0,
+      "majorStateMiss": 0,
+      "scoreRangeOutside": 2,
+      "states": {
+        "unknown": 4,
+        "no-concerns": 4,
+        "review": 6
+      },
+      "bands": {
+        "limited-evidence": 4,
+        "reassuring": 4,
+        "review-suggested": 4,
+        "review-recommended": 2
+      },
+      "scoreMin": 3,
+      "scoreMax": 26,
+      "scoreMedian": 15.5
+    },
+    "validation-ambiguous": {
+      "total": 14,
+      "PASS": 13,
+      "ACCEPTABLE": 1,
+      "FAIL": 0,
+      "majorStateMiss": 0,
+      "scoreRangeOutside": 0,
+      "states": {
+        "review": 11,
+        "caution": 3
+      },
+      "bands": {
+        "review-suggested": 7,
+        "review-recommended": 4,
+        "caution-advised": 3
+      },
+      "scoreMin": 20,
+      "scoreMax": 38,
+      "scoreMedian": 25
+    },
+    "validation-phishing": {
+      "total": 14,
+      "PASS": 13,
+      "ACCEPTABLE": 1,
+      "FAIL": 0,
+      "majorStateMiss": 0,
+      "scoreRangeOutside": 1,
+      "states": {
+        "high": 5,
+        "caution": 8,
+        "review": 1
+      },
+      "bands": {
+        "high-concern": 5,
+        "caution-advised": 4,
+        "strong-caution": 4,
+        "review-recommended": 1
+      },
+      "scoreMin": 27,
+      "scoreMax": 100,
+      "scoreMedian": 50.5
+    }
+  },
+  "results": [
+    {
+      "id": "VAL-L01",
+      "group": "validation-legitimate",
+      "theme": "ordinary-personal",
+      "description": "Ordinary personal message with no technical or behavioural evidence.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "unknown",
+      "actualLabel": "NOT ENOUGH EVIDENCE",
+      "score": 15,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "scoreBandLabel": "Limited evidence",
+      "scoreRange": [
+        10,
+        16
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "unknown"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-L02",
+      "group": "validation-legitimate",
+      "theme": "official-parcel",
+      "description": "Authenticated NZ Post delivery notice with an official tracking destination.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "no-concerns",
+      "actualLabel": "NO OBVIOUS CONCERNS",
+      "score": 3,
+      "scoreDerivedState": "no-concerns",
+      "scoreBand": "reassuring",
+      "scoreBandLabel": "Reassuring",
+      "scoreRange": [
+        0,
+        12
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "no-concerns"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -12,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-official-domain"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-pass-aligned",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://www.nzpost.co.nz/tools/tracking",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "VAL-L03",
+      "group": "validation-legitimate",
+      "theme": "mfa-notification",
+      "description": "Expected Microsoft one-time-code notification explicitly says not to share the code.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        10,
+        24
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-official-domain"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-pass-aligned",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-L04",
+      "group": "validation-legitimate",
+      "theme": "bank-statement",
+      "description": "Authenticated bank statement notification with first-party destination and no action pressure.",
+      "provider": "yahoo",
+      "status": "PASS",
+      "actualState": "no-concerns",
+      "actualLabel": "NO OBVIOUS CONCERNS",
+      "score": 3,
+      "scoreDerivedState": "no-concerns",
+      "scoreBand": "reassuring",
+      "scoreBandLabel": "Reassuring",
+      "scoreRange": [
+        0,
+        12
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "no-concerns"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -12,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-official-domain"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-pass-aligned",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://www.anz.co.nz/",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "VAL-L05",
+      "group": "validation-legitimate",
+      "theme": "ordinary-deadline",
+      "description": "Known lecturer sends a genuine same-day assignment reminder using time-pressure wording.",
+      "provider": "gmail",
+      "status": "ACCEPTABLE",
+      "actualState": "unknown",
+      "actualLabel": "NOT ENOUGH EVIDENCE",
+      "score": 15,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "scoreBandLabel": "Limited evidence",
+      "scoreRange": [
+        14,
+        24
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": -2,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-known-local"
+      ],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-L06",
+      "group": "validation-legitimate",
+      "theme": "supplier-bank-change",
+      "description": "Known supplier announces future bank-detail changes and explicitly asks for independent verification before payment.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 21,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        15,
+        30
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -2,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-known-local"
+      ],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-L07",
+      "group": "validation-legitimate",
+      "theme": "retail-gift-card",
+      "description": "Authenticated retailer advertises gift cards without secrecy or a request to send codes.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 25,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "scoreRange": [
+        10,
+        24
+      ],
+      "scoreRangeStatus": "HIGH",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-official-domain"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-pass-aligned",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "card-payment-data",
+        "gift-card"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://www.amazon.com/gift-cards",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "VAL-L08",
+      "group": "validation-legitimate",
+      "theme": "ordinary-confidentiality",
+      "description": "Known colleague uses normal project-confidentiality language without urgency or financial action.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 26,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "scoreRange": [
+        14,
+        28
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": -2,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-known-local"
+      ],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "payment-pressure",
+        "secrecy-isolation"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-L09",
+      "group": "validation-legitimate",
+      "theme": "scheduled-remote-support",
+      "description": "Authenticated support appointment asks the user to install remote-support software they requested earlier.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 18,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        10,
+        32
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown",
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": -5,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-official-domain"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-pass-aligned",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://support.microsoft.com/",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "VAL-L10",
+      "group": "validation-legitimate",
+      "theme": "password-reset",
+      "description": "Authenticated expected password-reset message uses an official first-party destination and never requests the existing password.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "no-concerns",
+      "actualLabel": "NO OBVIOUS CONCERNS",
+      "score": 3,
+      "scoreDerivedState": "no-concerns",
+      "scoreBand": "reassuring",
+      "scoreBandLabel": "Reassuring",
+      "scoreRange": [
+        0,
+        18
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "no-concerns"
+      ],
+      "expectedAcceptable": [
+        "unknown",
+        "review"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -12,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-official-domain"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-pass-aligned",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://account.microsoft.com/",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "VAL-L11",
+      "group": "validation-legitimate",
+      "theme": "marketing-tracking-url",
+      "description": "Ordinary newsletter uses one long tracking URL from an otherwise unknown sender.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 19,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        17,
+        30
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 4,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://community.example/news/september/weekly/update?utm_source=email&utm_medium=newsletter&utm_campaign=september_2026&subscriber=349857239857239857",
+          "score": 4,
+          "warningCodes": [
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-L12",
+      "group": "validation-legitimate",
+      "theme": "forwarding-auth-edge",
+      "description": "Forwarded-style legitimate message has SPF failure but aligned DKIM and DMARC pass.",
+      "provider": "gmail",
+      "status": "ACCEPTABLE",
+      "actualState": "unknown",
+      "actualLabel": "NOT ENOUGH EVIDENCE",
+      "score": 16,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "scoreBandLabel": "Limited evidence",
+      "scoreRange": [
+        10,
+        30
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 5,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": -4,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [
+        "auth-spf-fail",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-L13",
+      "group": "validation-legitimate",
+      "theme": "official-invoice-reminder",
+      "description": "Authenticated Xero invoice reminder uses an official destination and ordinary payment wording.",
+      "provider": "gmail",
+      "status": "ACCEPTABLE",
+      "actualState": "unknown",
+      "actualLabel": "NOT ENOUGH EVIDENCE",
+      "score": 13,
+      "scoreDerivedState": "unknown",
+      "scoreBand": "limited-evidence",
+      "scoreBandLabel": "Limited evidence",
+      "scoreRange": [
+        8,
+        24
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown",
+        "no-concerns"
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": -7,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-official-domain"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-pass-aligned",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "payment-pressure"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://www.xero.com/",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "VAL-L14",
+      "group": "validation-legitimate",
+      "theme": "ordinary-qr",
+      "description": "Authenticated airline message mentions a QR code for a boarding pass without asking the user to verify credentials.",
+      "provider": "outlook",
+      "status": "ACCEPTABLE",
+      "actualState": "no-concerns",
+      "actualLabel": "NO OBVIOUS CONCERNS",
+      "score": 5,
+      "scoreDerivedState": "no-concerns",
+      "scoreBand": "reassuring",
+      "scoreBandLabel": "Reassuring",
+      "scoreRange": [
+        8,
+        24
+      ],
+      "scoreRangeStatus": "LOW",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "unknown",
+        "no-concerns"
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 2,
+        "combinations": 0,
+        "reassurance": -12,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-official-domain"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-pass-aligned",
+        "auth-dkim-pass-aligned",
+        "auth-dmarc-pass"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "qr-quishing"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://www.airnewzealand.co.nz/",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "VAL-A01",
+      "group": "validation-ambiguous",
+      "theme": "unexpected-invoice",
+      "description": "Unexpected invoice message asks the recipient to open an attachment but has no other corroborating evidence.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 20,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        17,
+        34
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "attachment-pressure"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-A02",
+      "group": "validation-ambiguous",
+      "theme": "shortened-link",
+      "description": "Unknown sender uses a generic URL shortener for an event invitation.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 30,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "scoreRange": [
+        25,
+        40
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://bit.ly/community-event",
+          "score": 15,
+          "warningCodes": [
+            "shortener"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-A03",
+      "group": "validation-ambiguous",
+      "theme": "http-link",
+      "description": "Unknown message links to an HTTP-only portal with no other warning signs.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        17,
+        34
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "http://portal.example.test/",
+          "score": 8,
+          "warningCodes": [
+            "http"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-A04",
+      "group": "validation-ambiguous",
+      "theme": "punycode",
+      "description": "Message contains a punycode destination without other suspicious behaviour.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 35,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "scoreRange": [
+        30,
+        45
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 20,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://xn--e1afmkfd.xn--p1ai/",
+          "score": 20,
+          "warningCodes": [
+            "punycode"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-A05",
+      "group": "validation-ambiguous",
+      "theme": "brand-on-freemail",
+      "description": "Organisation-like display name claims Microsoft while using a consumer Gmail address, but contains no link.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 33,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "scoreRange": [
+        25,
+        44
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 18,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-brand-on-freemail"
+      ],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-A06",
+      "group": "validation-ambiguous",
+      "theme": "dmarc-failure",
+      "description": "Provider-trusted DMARC failure appears on an otherwise ordinary message.",
+      "provider": "outlook",
+      "status": "ACCEPTABLE",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 35,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "scoreRange": [
+        25,
+        44
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 20,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [
+        "auth-spf-fail",
+        "auth-dkim-fail",
+        "auth-dmarc-fail"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-A07",
+      "group": "validation-ambiguous",
+      "theme": "reply-to-mismatch",
+      "description": "Visible sender and Reply-To use unrelated domains.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 27,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "scoreRange": [
+        20,
+        40
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 12,
+        "links": 0,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [
+        "reply-domain-mismatch"
+      ],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-A08",
+      "group": "validation-ambiguous",
+      "theme": "password-request",
+      "description": "Message directly asks the recipient to confirm a password but provides no link or identity evidence.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        20,
+        34
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "password-request"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-A09",
+      "group": "validation-ambiguous",
+      "theme": "mfa-request",
+      "description": "Message asks the recipient to reply with an MFA code but provides no suspicious destination.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        20,
+        34
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "mfa-code-request"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-A10",
+      "group": "validation-ambiguous",
+      "theme": "changed-payment",
+      "description": "Supplier-like message announces changed bank details without urgency or independent identity evidence.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        20,
+        34
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "changed-payment-details"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-A11",
+      "group": "validation-ambiguous",
+      "theme": "gift-card-favour",
+      "description": "Manager-like request asks for gift cards as a favour but does not include secrecy or a link.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 28,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "scoreRange": [
+        20,
+        34
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 13,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "gift-card",
+        "boss-authority-favour"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-A12",
+      "group": "validation-ambiguous",
+      "theme": "remote-access",
+      "description": "Unknown support sender asks to install remote-access software without urgency.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 23,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        20,
+        34
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 8,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "remote-access"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-A13",
+      "group": "validation-ambiguous",
+      "theme": "parcel-shortener",
+      "description": "Parcel problem wording and a generic shortener appear together, but there is no brand/identity mismatch.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 38,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "scoreRange": [
+        30,
+        50
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 19,
+        "wording": 4,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 4
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "parcel-delivery"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://bit.ly/delivery-update",
+          "score": 19,
+          "warningCodes": [
+            "shortener",
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-A14",
+      "group": "validation-ambiguous",
+      "theme": "user-content-platform",
+      "description": "Account-verification wording points to a recognised user-content platform rather than a first-party organisation destination.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 20,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-suggested",
+      "scoreBandLabel": "Review suggested",
+      "scoreRange": [
+        20,
+        40
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 5,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "credential-request"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://forms.google.com/example-form",
+          "score": 0,
+          "warningCodes": []
+        }
+      ]
+    },
+    {
+      "id": "VAL-P01",
+      "group": "validation-phishing",
+      "theme": "credential-phish",
+      "description": "Microsoft impersonation from a consumer mailbox combines urgency, password request and a deceptive login destination.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 100,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "scoreRange": [
+        60,
+        100
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 18,
+        "links": 35,
+        "wording": 15,
+        "combinations": 20,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-brand-on-freemail"
+      ],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "account-threat",
+        "password-request"
+      ],
+      "combinationCodes": [
+        "credential-plus-strong-link",
+        "identity-plus-strong-link",
+        "urgency-action-link",
+        "urgent-secret-request-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "linkEvidence": [
+        {
+          "url": "https://example-login.invalid/restore",
+          "score": 35,
+          "warningCodes": [
+            "display-mismatch",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-P02",
+      "group": "validation-phishing",
+      "theme": "mfa-phish",
+      "description": "Verification-code request is paired with a Microsoft typosquat destination.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 100,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "scoreRange": [
+        55,
+        100
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 18,
+        "links": 39,
+        "wording": 10,
+        "combinations": 20,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-brand-domain-mismatch"
+      ],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "mfa-code-request"
+      ],
+      "combinationCodes": [
+        "credential-plus-strong-link",
+        "identity-plus-strong-link",
+        "urgency-action-link",
+        "urgent-secret-request-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "linkEvidence": [
+        {
+          "url": "https://micros0ft.com/login",
+          "score": 39,
+          "warningCodes": [
+            "typosquat-domain",
+            "url-word",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-P03",
+      "group": "validation-phishing",
+      "theme": "gift-card-scam",
+      "description": "Urgent secret gift-card request asks the recipient to send card numbers without using a link.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 40,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "scoreRange": [
+        35,
+        59
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 15,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "gift-card",
+        "secrecy-isolation",
+        "boss-authority-favour"
+      ],
+      "combinationCodes": [
+        "urgent-secret-gift-card-request"
+      ],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-P04",
+      "group": "validation-phishing",
+      "theme": "bec-payment",
+      "description": "Changed payment details, payment pressure and a deceptive invoice destination reinforce one another.",
+      "provider": "outlook",
+      "status": "ACCEPTABLE",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 39,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "scoreRange": [
+        50,
+        100
+      ],
+      "scoreRangeStatus": "LOW",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 4,
+        "wording": 15,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "payment-pressure",
+        "changed-payment-details"
+      ],
+      "combinationCodes": [
+        "changed-payment-plus-independent-concern"
+      ],
+      "linkEvidence": [
+        {
+          "url": "https://invoice-pay.invalid/payment",
+          "score": 4,
+          "warningCodes": [
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-P05",
+      "group": "validation-phishing",
+      "theme": "remote-access-scam",
+      "description": "Urgent remote-access request uses a generic shortener to distribute the support tool.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 50,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "scoreRange": [
+        40,
+        65
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 15,
+        "wording": 10,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "remote-access"
+      ],
+      "combinationCodes": [
+        "urgent-remote-access-request"
+      ],
+      "linkEvidence": [
+        {
+          "url": "https://bit.ly/support-tool",
+          "score": 15,
+          "warningCodes": [
+            "shortener"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-P06",
+      "group": "validation-phishing",
+      "theme": "bank-impersonation",
+      "description": "ANZ impersonation uses a consumer mailbox, failed authentication, credential wording and a fake destination.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 100,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "scoreRange": [
+        60,
+        100
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 30,
+        "links": 39,
+        "wording": 12,
+        "combinations": 20,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-brand-on-freemail"
+      ],
+      "authenticationEvidence": [
+        "auth-spf-fail",
+        "auth-dkim-fail",
+        "auth-dmarc-fail"
+      ],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "account-threat",
+        "credential-request"
+      ],
+      "combinationCodes": [
+        "credential-plus-strong-link",
+        "identity-plus-strong-link",
+        "urgency-action-link",
+        "brand-plus-identity"
+      ],
+      "linkEvidence": [
+        {
+          "url": "https://anz-secure-login.invalid/signin",
+          "score": 39,
+          "warningCodes": [
+            "url-word",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-P07",
+      "group": "validation-phishing",
+      "theme": "qr-shortener",
+      "description": "QR verification lure combines account-verification wording with a shortened destination.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 43,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "scoreRange": [
+        30,
+        55
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 19,
+        "wording": 9,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 4
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "credential-request",
+        "qr-quishing"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://bit.ly/qr-verify",
+          "score": 19,
+          "warningCodes": [
+            "shortener",
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-P08",
+      "group": "validation-phishing",
+      "theme": "fake-support-callback",
+      "description": "Unexpected subscription charge uses urgency and a fake support callback but no technical corroboration.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "review",
+      "actualLabel": "REVIEW",
+      "score": 27,
+      "scoreDerivedState": "review",
+      "scoreBand": "review-recommended",
+      "scoreBandLabel": "Review recommended",
+      "scoreRange": [
+        20,
+        44
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "review"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 0,
+        "wording": 12,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "subscription-renewal",
+        "fake-support-callback"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": []
+    },
+    {
+      "id": "VAL-P09",
+      "group": "validation-phishing",
+      "theme": "tax-refund-phish",
+      "description": "IRD refund lure uses account-verification wording and a deceptive destination.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 95,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "scoreRange": [
+        55,
+        100
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 18,
+        "links": 35,
+        "wording": 7,
+        "combinations": 20,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-brand-domain-mismatch"
+      ],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "credential-request",
+        "refund-reward"
+      ],
+      "combinationCodes": [
+        "credential-plus-strong-link",
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "linkEvidence": [
+        {
+          "url": "https://ird-refund.invalid/claim",
+          "score": 35,
+          "warningCodes": [
+            "display-mismatch",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-P10",
+      "group": "validation-phishing",
+      "theme": "parcel-ip-host",
+      "description": "Parcel-payment pressure points to a raw-IP destination.",
+      "provider": "yahoo",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 51,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "scoreRange": [
+        40,
+        70
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 29,
+        "wording": 7,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "payment-pressure",
+        "parcel-delivery"
+      ],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://192.0.2.40/payment",
+          "score": 29,
+          "warningCodes": [
+            "ip-host",
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-P11",
+      "group": "validation-phishing",
+      "theme": "display-destination-mismatch",
+      "description": "Benign-looking link text hides an unrelated destination even without suspicious body wording.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 50,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "scoreRange": [
+        40,
+        65
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 35,
+        "wording": 0,
+        "combinations": 0,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [],
+      "linkEvidence": [
+        {
+          "url": "https://payment-review.invalid/",
+          "score": 35,
+          "warningCodes": [
+            "display-mismatch",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-P12",
+      "group": "validation-phishing",
+      "theme": "typosquat-identity",
+      "description": "Microsoft-branded sender/domain inconsistency is reinforced by a typosquat destination.",
+      "provider": "outlook",
+      "status": "PASS",
+      "actualState": "high",
+      "actualLabel": "HIGH CONCERN",
+      "score": 83,
+      "scoreDerivedState": "high",
+      "scoreBand": "high-concern",
+      "scoreBandLabel": "High concern",
+      "scoreRange": [
+        55,
+        100
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "high"
+      ],
+      "expectedAcceptable": [
+        "caution"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 18,
+        "links": 35,
+        "wording": 0,
+        "combinations": 15,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [
+        "sender-brand-domain-mismatch"
+      ],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [],
+      "combinationCodes": [
+        "identity-plus-strong-link",
+        "brand-plus-identity"
+      ],
+      "linkEvidence": [
+        {
+          "url": "https://micros0ft.com/",
+          "score": 35,
+          "warningCodes": [
+            "typosquat-domain",
+            "brand-domain-inconsistency"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-P13",
+      "group": "validation-phishing",
+      "theme": "credential-over-http",
+      "description": "Credential request is paired with an HTTP login destination but no stronger identity mismatch.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 36,
+      "scoreDerivedState": "caution",
+      "scoreBand": "caution-advised",
+      "scoreBandLabel": "Caution advised",
+      "scoreRange": [
+        30,
+        50
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "review"
+      ],
+      "forbiddenStates": [
+        "high"
+      ],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 0,
+        "links": 8,
+        "wording": 8,
+        "combinations": 5,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 0
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "password-request"
+      ],
+      "combinationCodes": [
+        "secret-request-plus-concerning-link"
+      ],
+      "linkEvidence": [
+        {
+          "url": "http://example.test/login",
+          "score": 8,
+          "warningCodes": [
+            "http",
+            "url-word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VAL-P14",
+      "group": "validation-phishing",
+      "theme": "bec-secrecy-identity",
+      "description": "Business-email-compromise style message combines changed payment details, urgency, secrecy and Reply-To mismatch.",
+      "provider": "gmail",
+      "status": "PASS",
+      "actualState": "caution",
+      "actualLabel": "CAUTION",
+      "score": 52,
+      "scoreDerivedState": "caution",
+      "scoreBand": "strong-caution",
+      "scoreBandLabel": "Strong caution",
+      "scoreRange": [
+        35,
+        65
+      ],
+      "scoreRangeStatus": "IN_RANGE",
+      "majorStateMiss": false,
+      "expectedPreferred": [
+        "caution"
+      ],
+      "expectedAcceptable": [
+        "high"
+      ],
+      "forbiddenStates": [],
+      "reasons": [],
+      "moduleScores": {
+        "baseline": 15,
+        "identity": 12,
+        "links": 0,
+        "wording": 15,
+        "combinations": 10,
+        "reassurance": 0,
+        "weakIdentityApplied": 0,
+        "weakWordingApplied": 2
+      },
+      "minimumVerdict": null,
+      "senderEvidence": [],
+      "authenticationEvidence": [],
+      "metadataEvidence": [
+        "reply-domain-mismatch"
+      ],
+      "bodyIdentityEvidence": [],
+      "wordingMatches": [
+        "urgency",
+        "changed-payment-details",
+        "secrecy-isolation"
+      ],
+      "combinationCodes": [
+        "changed-payment-plus-independent-concern",
+        "urgent-secrecy-plus-identity"
+      ],
+      "linkEvidence": []
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "manifest_version": 3,
+  "name": "BeforeUClick",
+  "version": "0.22.17.1",
+  "description": "Private, local email checks with Outlook header capture, Microsoft identity-family hardening, multi-DKIM authentication handling, and provider-validation tools.",
+  "action": {
+    "default_title": "BeforeUClick",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*",
+        "https://outlook.live.com/*",
+        "https://outlook.office.com/*",
+        "https://outlook.office365.com/*",
+        "https://outlook.cloud.microsoft/*",
+        "https://mail.yahoo.com/*"
+      ],
+      "js": [
+        "data/public_suffix_rules.js",
+        "data/evidence_classes.js",
+        "data/organisation_references.js",
+        "data/shared_platform_references.js",
+        "data/controlled_namespaces.js",
+        "data/wording_patterns.js",
+        "data/email_provider_references.js",
+        "analysis/domains.js",
+        "analysis/references.js",
+        "analysis/evidence.js",
+        "analysis/similarity.js",
+        "analysis/brands.js",
+        "analysis/wording.js",
+        "analysis/sender.js",
+        "analysis/body_identity.js",
+        "analysis/headers/parser.js",
+        "analysis/headers/alignment.js",
+        "analysis/headers/authentication.js",
+        "analysis/headers/evidence.js",
+        "settings/preferences.js",
+        "adapters/shared/dom.js",
+        "adapters/shared/links.js",
+        "adapters/gmail/extraction.js",
+        "adapters/gmail/links.js",
+        "adapters/outlook/extraction.js",
+        "adapters/outlook/links.js",
+        "adapters/yahoo/extraction.js",
+        "adapters/yahoo/links.js",
+        "adapters/gmail/headers.js",
+        "adapters/outlook/headers.js",
+        "adapters/yahoo/headers.js",
+        "adapters/provider_router.js",
+        "analysis/metadata.js",
+        "analysis/risk.js",
+        "analysis/scoring.js",
+        "analysis/evaluation.js",
+        "ui/accessibility.js",
+        "ui/highlighting.js",
+        "ui/click_guard.js",
+        "ui/link_popover.js",
+        "ui/share.js",
+        "ui/report.js",
+        "adapters/gmail/inbox_preview.js",
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "css": [
+        "ui/injected.css"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background/service_worker.js"
+  },
+  "options_page": "settings/options.html",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/icon16.png",
+        "icons/icon48.png",
+        "icons/icon128.png",
+        "icons/mark.png"
+      ],
+      "matches": [
+        "https://mail.google.com/*",
+        "https://outlook.live.com/*",
+        "https://outlook.office.com/*",
+        "https://outlook.office365.com/*",
+        "https://outlook.cloud.microsoft/*",
+        "https://mail.yahoo.com/*"
+      ]
+    }
+  ]
+}

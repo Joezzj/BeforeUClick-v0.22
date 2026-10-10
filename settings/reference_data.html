@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BeforeUClick — Reference data</title>
+    <link rel="stylesheet" href="options.css">
+    <link rel="stylesheet" href="../ui/theme.css">
+</head>
+<body class="buc-app">
+    <header class="header-band">
+        <img class="logo" src="../icons/icon128.png" alt="BeforeUClick">
+        <div class="title"><h1>Reference data</h1><p class="eyebrow">Local rules &amp; metadata</p></div>
+    </header>
+    <main class="container">
+        <div class="settings-intro"><span class="settings-kicker">ACTIVE REFERENCE DATA</span><p>Read-only local data used by BeforeUClick's deterministic checks.</p></div>
+        <h2 class="section-title">Reference data</h2>
+        <p class="section-description">Explore the local organisations, wording categories, namespaces, platform references and evidence classes currently available to checks.</p>
+        <section class="panel reference-panel">
+            <details><summary>Organisation references <span class="count" id="organisationCount">0</span></summary><div id="organisationList" class="tag-list"></div></details>
+            <details><summary>Wording categories <span class="count" id="wordingCount">0</span></summary><div id="wordingList" class="tag-list"></div></details>
+            <details><summary>Controlled namespaces <span class="count" id="namespaceCount">0</span></summary><div id="namespaceList" class="tag-list"></div></details>
+            <details><summary>Shared hosting / user-content platforms <span class="count" id="platformCount">0</span></summary><div id="platformList" class="tag-list"></div></details>
+            <details><summary>Consumer email providers <span class="count" id="freemailCount">0</span></summary><div id="freemailList" class="tag-list"></div></details>
+            <details><summary>Threat sources · not connected <span class="count" id="threatCount">0</span></summary><div id="threatList" class="tag-list"></div></details>
+            <details><summary>Evidence classes <span class="count" id="evidenceCount">0</span></summary><div id="evidenceList" class="tag-list"></div></details>
+            <details><summary>Reputation sources · not connected <span class="count" id="reputationCount">0</span></summary><div id="reputationList" class="tag-list"></div></details>
+        </section>
+        <h2 class="section-title">How this is used</h2>
+        <section class="panel privacy-panel"><p>This page is read-only. These references provide context or evidence to the local checker; they are not a list of guaranteed-safe or guaranteed-malicious senders.</p></section>
+    </main>
+    <script src="../data/evidence_classes.js"></script>
+    <script src="../data/organisation_references.js"></script>
+    <script src="../data/shared_platform_references.js"></script>
+    <script src="../data/controlled_namespaces.js"></script>
+    <script src="../data/wording_patterns.js"></script>
+    <script src="../data/threat_sources.js"></script>
+    <script src="../data/reputation_sources.js"></script>
+    <script src="../data/email_provider_references.js"></script>
+    <script src="preferences.js"></script>
+    <script src="reference_data.js"></script>
+</body>
+</html>

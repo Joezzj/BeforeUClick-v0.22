@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BeforeUClick — Known senders</title>
+    <link rel="stylesheet" href="options.css">
+    <link rel="stylesheet" href="../ui/theme.css">
+</head>
+<body class="buc-app">
+    <header class="header-band">
+        <img class="logo" src="../icons/icon128.png" alt="BeforeUClick">
+        <div class="title"><h1>Known senders</h1><p class="eyebrow">Local list</p></div>
+    </header>
+    <main class="container">
+        <div class="settings-intro"><span class="settings-kicker">YOUR LOCAL LIST</span><p>Addresses you explicitly recognise. This list stays in your browser.</p></div>
+        <h2 class="section-title">Known senders</h2>
+        <p class="section-description">A known sender is only a small reassuring signal. It never overrides suspicious links, identity conflicts, wording, authentication failures or other evidence.</p>
+        <section class="panel">
+            <div id="storageDisabled" class="empty-state hidden">Remembered email information is off. Turn it on in Settings before adding known senders.</div>
+            <div id="knownEmpty" class="empty-state hidden">No known senders saved yet.</div>
+            <ul id="knownSenderList" class="entry-list"></ul>
+            <form id="addKnownSenderForm" class="add-form">
+                <input id="addKnownSenderInput" aria-label="Known sender email address" type="email" autocomplete="off" placeholder="name@example.com" required>
+                <button type="submit">Add</button>
+            </form>
+        </section>
+        <h2 class="section-title">Privacy &amp; data</h2>
+        <section class="panel privacy-panel">
+            <p>This feature requires “Remember email-related information on this device”. When enabled, only the addresses you explicitly add here are kept as known-sender data. The list is not an allow-list and never makes future messages automatically safe.</p>
+        </section>
+        <p id="saveStatus" class="save-status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="preferences.js"></script>
+    <script src="known_senders.js"></script>
+</body>
+</html>

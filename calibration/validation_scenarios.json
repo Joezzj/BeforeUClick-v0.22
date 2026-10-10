@@ -1,0 +1,1407 @@
+[
+  {
+    "id": "VAL-L01",
+    "group": "validation-legitimate",
+    "theme": "ordinary-personal",
+    "description": "Ordinary personal message with no technical or behavioural evidence.",
+    "email": {
+      "provider": "gmail",
+      "sender": "alex@example.net",
+      "senderName": "Alex",
+      "subject": "Lunch tomorrow",
+      "body": "Hi, are you still free for lunch at noon tomorrow?",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "unknown"
+      ],
+      "acceptableStates": [],
+      "scoreRange": [
+        10,
+        16
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-L02",
+    "group": "validation-legitimate",
+    "theme": "official-parcel",
+    "description": "Authenticated NZ Post delivery notice with an official tracking destination.",
+    "email": {
+      "provider": "gmail",
+      "sender": "updates@nzpost.co.nz",
+      "senderName": "NZ Post",
+      "subject": "Your parcel has been delivered",
+      "body": "Your parcel was delivered at 2:14 pm. You can view tracking history below.",
+      "links": [
+        {
+          "text": "Track parcel",
+          "url": "https://www.nzpost.co.nz/tools/tracking"
+        }
+      ],
+      "auth": {
+        "spf": "pass",
+        "spfDomain": "nzpost.co.nz",
+        "dkim": "pass",
+        "dkimDomain": "nzpost.co.nz",
+        "dmarc": "pass",
+        "dmarcDomain": "nzpost.co.nz"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "no-concerns"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "scoreRange": [
+        0,
+        12
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-L03",
+    "group": "validation-legitimate",
+    "theme": "mfa-notification",
+    "description": "Expected Microsoft one-time-code notification explicitly says not to share the code.",
+    "email": {
+      "provider": "outlook",
+      "sender": "account-security@microsoft.com",
+      "senderName": "Microsoft account team",
+      "subject": "Your sign-in code",
+      "body": "Your verification code is 731204. Enter it only in the Microsoft sign-in window you already opened. Never share this code with anyone.",
+      "links": [],
+      "auth": {
+        "spf": "pass",
+        "spfDomain": "microsoft.com",
+        "dkim": "pass",
+        "dkimDomain": "microsoft.com",
+        "dmarc": "pass",
+        "dmarcDomain": "microsoft.com"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "scoreRange": [
+        10,
+        24
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-L04",
+    "group": "validation-legitimate",
+    "theme": "bank-statement",
+    "description": "Authenticated bank statement notification with first-party destination and no action pressure.",
+    "email": {
+      "provider": "yahoo",
+      "sender": "statements@anz.co.nz",
+      "senderName": "ANZ New Zealand",
+      "subject": "Your monthly statement is ready",
+      "body": "Your monthly statement is ready to view in Internet Banking. There is no payment due from this email.",
+      "links": [
+        {
+          "text": "ANZ Internet Banking",
+          "url": "https://www.anz.co.nz/"
+        }
+      ],
+      "auth": {
+        "spf": "pass",
+        "spfDomain": "anz.co.nz",
+        "dkim": "pass",
+        "dkimDomain": "anz.co.nz",
+        "dmarc": "pass",
+        "dmarcDomain": "anz.co.nz"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "no-concerns"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "scoreRange": [
+        0,
+        12
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-L05",
+    "group": "validation-legitimate",
+    "theme": "ordinary-deadline",
+    "description": "Known lecturer sends a genuine same-day assignment reminder using time-pressure wording.",
+    "email": {
+      "provider": "gmail",
+      "sender": "lecturer@university.example",
+      "senderName": "Course Lecturer",
+      "subject": "Action required: assignment closes today",
+      "body": "Action required: the assignment portal closes today at 5 pm. Submit through the course site you normally use.",
+      "links": [],
+      "knownSender": true
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "scoreRange": [
+        14,
+        24
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-L06",
+    "group": "validation-legitimate",
+    "theme": "supplier-bank-change",
+    "description": "Known supplier announces future bank-detail changes and explicitly asks for independent verification before payment.",
+    "email": {
+      "provider": "outlook",
+      "sender": "accounts@supplier.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Bank details for future invoices",
+      "body": "Our bank details have changed for future invoices. Do not alter any payment until you have verified the change using our usual phone number.",
+      "links": [],
+      "knownSender": true
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "scoreRange": [
+        15,
+        30
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-L07",
+    "group": "validation-legitimate",
+    "theme": "retail-gift-card",
+    "description": "Authenticated retailer advertises gift cards without secrecy or a request to send codes.",
+    "email": {
+      "provider": "gmail",
+      "sender": "offers@amazon.com",
+      "senderName": "Amazon",
+      "subject": "Gift cards for birthdays",
+      "body": "Purchase a gift card for a birthday or celebration from your account if you want one. We will never ask you to send us the gift card number.",
+      "links": [
+        {
+          "text": "Amazon gift cards",
+          "url": "https://www.amazon.com/gift-cards"
+        }
+      ],
+      "auth": {
+        "spf": "pass",
+        "spfDomain": "amazon.com",
+        "dkim": "pass",
+        "dkimDomain": "amazon.com",
+        "dmarc": "pass",
+        "dmarcDomain": "amazon.com"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "scoreRange": [
+        10,
+        24
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-L08",
+    "group": "validation-legitimate",
+    "theme": "ordinary-confidentiality",
+    "description": "Known colleague uses normal project-confidentiality language without urgency or financial action.",
+    "email": {
+      "provider": "gmail",
+      "sender": "sam@company.example",
+      "senderName": "Sam",
+      "subject": "Draft project plan",
+      "body": "Please keep this confidential until the team meeting next week. There is nothing you need to approve or pay today.",
+      "links": [],
+      "knownSender": true
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "scoreRange": [
+        14,
+        28
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-L09",
+    "group": "validation-legitimate",
+    "theme": "scheduled-remote-support",
+    "description": "Authenticated support appointment asks the user to install remote-support software they requested earlier.",
+    "email": {
+      "provider": "outlook",
+      "sender": "support@microsoft.com",
+      "senderName": "Microsoft Support",
+      "subject": "Your scheduled support appointment",
+      "body": "For the support session you booked, install the support application from Microsoft before the appointment. Do not grant remote access to anyone who contacts you unexpectedly.",
+      "links": [
+        {
+          "text": "Microsoft support",
+          "url": "https://support.microsoft.com/"
+        }
+      ],
+      "auth": {
+        "spf": "pass",
+        "spfDomain": "microsoft.com",
+        "dkim": "pass",
+        "dkimDomain": "microsoft.com",
+        "dmarc": "pass",
+        "dmarcDomain": "microsoft.com"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown",
+        "caution"
+      ],
+      "scoreRange": [
+        10,
+        32
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-L10",
+    "group": "validation-legitimate",
+    "theme": "password-reset",
+    "description": "Authenticated expected password-reset message uses an official first-party destination and never requests the existing password.",
+    "email": {
+      "provider": "gmail",
+      "sender": "account-security@microsoft.com",
+      "senderName": "Microsoft account team",
+      "subject": "Reset your password",
+      "body": "You requested a password reset. Use the Microsoft account page below to choose a new password. Microsoft will not ask you to reply with your current password.",
+      "links": [
+        {
+          "text": "Reset at Microsoft",
+          "url": "https://account.microsoft.com/"
+        }
+      ],
+      "auth": {
+        "spf": "pass",
+        "spfDomain": "microsoft.com",
+        "dkim": "pass",
+        "dkimDomain": "microsoft.com",
+        "dmarc": "pass",
+        "dmarcDomain": "microsoft.com"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "no-concerns"
+      ],
+      "acceptableStates": [
+        "unknown",
+        "review"
+      ],
+      "scoreRange": [
+        0,
+        18
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-L11",
+    "group": "validation-legitimate",
+    "theme": "marketing-tracking-url",
+    "description": "Ordinary newsletter uses one long tracking URL from an otherwise unknown sender.",
+    "email": {
+      "provider": "gmail",
+      "sender": "news@community.example",
+      "senderName": "Community Newsletter",
+      "subject": "September community news",
+      "body": "Here are this month's events and notices. Read the full newsletter on our website.",
+      "links": [
+        {
+          "text": "Read the newsletter",
+          "url": "https://community.example/news/september/weekly/update?utm_source=email&utm_medium=newsletter&utm_campaign=september_2026&subscriber=349857239857239857"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "scoreRange": [
+        17,
+        30
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-L12",
+    "group": "validation-legitimate",
+    "theme": "forwarding-auth-edge",
+    "description": "Forwarded-style legitimate message has SPF failure but aligned DKIM and DMARC pass.",
+    "email": {
+      "provider": "gmail",
+      "sender": "notice@example.org",
+      "senderName": "Example Association",
+      "subject": "Forwarded membership notice",
+      "body": "Your annual membership record has been updated. No action is required.",
+      "links": [],
+      "rawHeaders": "From: Example Association <notice@example.org>\r\nTo: recipient@example.net\r\nAuthentication-Results: mx.google.com; spf=fail smtp.mailfrom=forwarder.example.net; dkim=pass header.d=example.org header.s=s1; dmarc=pass header.from=example.org\r\nDKIM-Signature: v=1; a=rsa-sha256; d=example.org; s=s1; b=validation\r\nReceived: from forwarder.example.net by mx.google.com\r\nSubject: Forwarded membership notice"
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown"
+      ],
+      "scoreRange": [
+        10,
+        30
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-L13",
+    "group": "validation-legitimate",
+    "theme": "official-invoice-reminder",
+    "description": "Authenticated Xero invoice reminder uses an official destination and ordinary payment wording.",
+    "email": {
+      "provider": "gmail",
+      "sender": "notifications@xero.com",
+      "senderName": "Xero",
+      "subject": "Invoice reminder",
+      "body": "This is a reminder that an outstanding invoice is due this week. Review the invoice in Xero before making payment.",
+      "links": [
+        {
+          "text": "View in Xero",
+          "url": "https://www.xero.com/"
+        }
+      ],
+      "auth": {
+        "spf": "pass",
+        "spfDomain": "xero.com",
+        "dkim": "pass",
+        "dkimDomain": "xero.com",
+        "dmarc": "pass",
+        "dmarcDomain": "xero.com"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown",
+        "no-concerns"
+      ],
+      "scoreRange": [
+        8,
+        24
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-L14",
+    "group": "validation-legitimate",
+    "theme": "ordinary-qr",
+    "description": "Authenticated airline message mentions a QR code for a boarding pass without asking the user to verify credentials.",
+    "email": {
+      "provider": "outlook",
+      "sender": "travel@airnewzealand.co.nz",
+      "senderName": "Air New Zealand",
+      "subject": "Your boarding pass",
+      "body": "Your boarding pass includes a QR code for airport scanning. You can also open the booking in the Air New Zealand app.",
+      "links": [
+        {
+          "text": "Manage booking",
+          "url": "https://www.airnewzealand.co.nz/"
+        }
+      ],
+      "auth": {
+        "spf": "pass",
+        "spfDomain": "airnewzealand.co.nz",
+        "dkim": "pass",
+        "dkimDomain": "airnewzealand.co.nz",
+        "dmarc": "pass",
+        "dmarcDomain": "airnewzealand.co.nz"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "unknown",
+        "no-concerns"
+      ],
+      "scoreRange": [
+        8,
+        24
+      ],
+      "forbiddenStates": [
+        "caution",
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A01",
+    "group": "validation-ambiguous",
+    "theme": "unexpected-invoice",
+    "description": "Unexpected invoice message asks the recipient to open an attachment but has no other corroborating evidence.",
+    "email": {
+      "provider": "gmail",
+      "sender": "billing@newvendor.example",
+      "senderName": "New Vendor Billing",
+      "subject": "Invoice 48321 attached",
+      "body": "Please open the attached invoice and check the amount before the due date.",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        17,
+        34
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A02",
+    "group": "validation-ambiguous",
+    "theme": "shortened-link",
+    "description": "Unknown sender uses a generic URL shortener for an event invitation.",
+    "email": {
+      "provider": "gmail",
+      "sender": "events@club.example",
+      "senderName": "Local Club",
+      "subject": "Event RSVP",
+      "body": "Please RSVP using the event link.",
+      "links": [
+        {
+          "text": "RSVP",
+          "url": "https://bit.ly/community-event"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        25,
+        40
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A03",
+    "group": "validation-ambiguous",
+    "theme": "http-link",
+    "description": "Unknown message links to an HTTP-only portal with no other warning signs.",
+    "email": {
+      "provider": "outlook",
+      "sender": "admin@smallbusiness.example",
+      "senderName": "Small Business Admin",
+      "subject": "Timesheet portal",
+      "body": "The timesheet portal is available here.",
+      "links": [
+        {
+          "text": "Timesheet portal",
+          "url": "http://portal.example.test/"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        17,
+        34
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A04",
+    "group": "validation-ambiguous",
+    "theme": "punycode",
+    "description": "Message contains a punycode destination without other suspicious behaviour.",
+    "email": {
+      "provider": "gmail",
+      "sender": "hello@international.example",
+      "senderName": "International Service",
+      "subject": "Account information",
+      "body": "You can view your account information on our international site.",
+      "links": [
+        {
+          "text": "International site",
+          "url": "https://xn--e1afmkfd.xn--p1ai/"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "scoreRange": [
+        30,
+        45
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A05",
+    "group": "validation-ambiguous",
+    "theme": "brand-on-freemail",
+    "description": "Organisation-like display name claims Microsoft while using a consumer Gmail address, but contains no link.",
+    "email": {
+      "provider": "gmail",
+      "sender": "microsoftpayrollteam@gmail.com",
+      "senderName": "Microsoft Payroll Team",
+      "subject": "Payroll notice",
+      "body": "Your payroll profile has been updated. Contact HR if this was unexpected.",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        25,
+        44
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A06",
+    "group": "validation-ambiguous",
+    "theme": "dmarc-failure",
+    "description": "Provider-trusted DMARC failure appears on an otherwise ordinary message.",
+    "email": {
+      "provider": "outlook",
+      "sender": "notice@merchant.example",
+      "senderName": "Merchant",
+      "subject": "Order update",
+      "body": "Your order has shipped. No action is required.",
+      "links": [],
+      "auth": {
+        "spf": "fail",
+        "spfDomain": "attacker.invalid",
+        "dkim": "fail",
+        "dkimDomain": "attacker.invalid",
+        "dmarc": "fail",
+        "dmarcDomain": "merchant.example"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        25,
+        44
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A07",
+    "group": "validation-ambiguous",
+    "theme": "reply-to-mismatch",
+    "description": "Visible sender and Reply-To use unrelated domains.",
+    "email": {
+      "provider": "gmail",
+      "sender": "newsletter@association.example",
+      "senderName": "Association",
+      "subject": "Membership update",
+      "body": "Reply if you need to update your membership details.",
+      "links": [],
+      "replyTo": "helpdesk@other.example"
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        20,
+        40
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A08",
+    "group": "validation-ambiguous",
+    "theme": "password-request",
+    "description": "Message directly asks the recipient to confirm a password but provides no link or identity evidence.",
+    "email": {
+      "provider": "gmail",
+      "sender": "service@unknown.example",
+      "senderName": "Service Desk",
+      "subject": "Confirm access",
+      "body": "Confirm your password to continue using the service.",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        20,
+        34
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A09",
+    "group": "validation-ambiguous",
+    "theme": "mfa-request",
+    "description": "Message asks the recipient to reply with an MFA code but provides no suspicious destination.",
+    "email": {
+      "provider": "gmail",
+      "sender": "support@unknown.example",
+      "senderName": "Support",
+      "subject": "Complete support request",
+      "body": "Reply with your MFA code so support can complete the request.",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        20,
+        34
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A10",
+    "group": "validation-ambiguous",
+    "theme": "changed-payment",
+    "description": "Supplier-like message announces changed bank details without urgency or independent identity evidence.",
+    "email": {
+      "provider": "outlook",
+      "sender": "accounts@vendor.example",
+      "senderName": "Vendor Accounts",
+      "subject": "Updated payment details",
+      "body": "Our bank details have changed. Future invoices will use our new payment details.",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        20,
+        34
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A11",
+    "group": "validation-ambiguous",
+    "theme": "gift-card-favour",
+    "description": "Manager-like request asks for gift cards as a favour but does not include secrecy or a link.",
+    "email": {
+      "provider": "gmail",
+      "sender": "manager@company.example",
+      "senderName": "Manager",
+      "subject": "Quick favour",
+      "body": "Can you do me a favour and buy some gift cards for the team event this afternoon?",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        20,
+        34
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A12",
+    "group": "validation-ambiguous",
+    "theme": "remote-access",
+    "description": "Unknown support sender asks to install remote-access software without urgency.",
+    "email": {
+      "provider": "gmail",
+      "sender": "support@helpdesk.example",
+      "senderName": "Help Desk",
+      "subject": "Remote support",
+      "body": "Install TeamViewer before the support appointment so the technician can provide remote access assistance.",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        20,
+        34
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A13",
+    "group": "validation-ambiguous",
+    "theme": "parcel-shortener",
+    "description": "Parcel problem wording and a generic shortener appear together, but there is no brand/identity mismatch.",
+    "email": {
+      "provider": "gmail",
+      "sender": "delivery@courier.example",
+      "senderName": "Courier",
+      "subject": "Delivery problem",
+      "body": "Your parcel is delayed. Action required within 24 hours to update your delivery address.",
+      "links": [
+        {
+          "text": "Update delivery",
+          "url": "https://bit.ly/delivery-update"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "scoreRange": [
+        30,
+        50
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-A14",
+    "group": "validation-ambiguous",
+    "theme": "user-content-platform",
+    "description": "Account-verification wording points to a recognised user-content platform rather than a first-party organisation destination.",
+    "email": {
+      "provider": "gmail",
+      "sender": "it@workplace.example",
+      "senderName": "IT Team",
+      "subject": "Account check",
+      "body": "Please verify your account information using the form below.",
+      "links": [
+        {
+          "text": "Account form",
+          "url": "https://forms.google.com/example-form"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        20,
+        40
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-P01",
+    "group": "validation-phishing",
+    "theme": "credential-phish",
+    "description": "Microsoft impersonation from a consumer mailbox combines urgency, password request and a deceptive login destination.",
+    "email": {
+      "provider": "gmail",
+      "sender": "microsoft.security.alert@gmail.com",
+      "senderName": "Microsoft Security",
+      "subject": "Urgent account suspension",
+      "body": "Urgent. Your account will be suspended. Enter your password immediately to restore access.",
+      "links": [
+        {
+          "text": "https://account.microsoft.com",
+          "url": "https://example-login.invalid/restore"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [],
+      "scoreRange": [
+        60,
+        100
+      ],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "VAL-P02",
+    "group": "validation-phishing",
+    "theme": "mfa-phish",
+    "description": "Verification-code request is paired with a Microsoft typosquat destination.",
+    "email": {
+      "provider": "outlook",
+      "sender": "security@support-alert.example",
+      "senderName": "Microsoft Account Team",
+      "subject": "Verification required",
+      "body": "Action required. Reply with your verification code now and use the security page below.",
+      "links": [
+        {
+          "text": "Microsoft account",
+          "url": "https://micros0ft.com/login"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        55,
+        100
+      ],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "VAL-P03",
+    "group": "validation-phishing",
+    "theme": "gift-card-scam",
+    "description": "Urgent secret gift-card request asks the recipient to send card numbers without using a link.",
+    "email": {
+      "provider": "gmail",
+      "sender": "director@company-mail.example",
+      "senderName": "Managing Director",
+      "subject": "Urgent favour",
+      "body": "Urgent favour. Buy some gift cards now, keep this confidential, and send me the gift card numbers when you have them.",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "scoreRange": [
+        35,
+        59
+      ],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "VAL-P04",
+    "group": "validation-phishing",
+    "theme": "bec-payment",
+    "description": "Changed payment details, payment pressure and a deceptive invoice destination reinforce one another.",
+    "email": {
+      "provider": "outlook",
+      "sender": "accounts@supplier-billing.example",
+      "senderName": "Supplier Accounts",
+      "subject": "Updated invoice payment",
+      "body": "Urgent. Our bank details have changed. Please pay this invoice today using the new payment details below.",
+      "links": [
+        {
+          "text": "Supplier invoice portal",
+          "url": "https://invoice-pay.invalid/payment"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        50,
+        100
+      ],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "VAL-P05",
+    "group": "validation-phishing",
+    "theme": "remote-access-scam",
+    "description": "Urgent remote-access request uses a generic shortener to distribute the support tool.",
+    "email": {
+      "provider": "gmail",
+      "sender": "technician@supportdesk.example",
+      "senderName": "Technical Support",
+      "subject": "Urgent computer problem",
+      "body": "Urgent. Install AnyDesk immediately and allow our team remote access to your computer.",
+      "links": [
+        {
+          "text": "Download support tool",
+          "url": "https://bit.ly/support-tool"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "scoreRange": [
+        40,
+        65
+      ],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "VAL-P06",
+    "group": "validation-phishing",
+    "theme": "bank-impersonation",
+    "description": "ANZ impersonation uses a consumer mailbox, failed authentication, credential wording and a fake destination.",
+    "email": {
+      "provider": "outlook",
+      "sender": "anz.security.team@gmail.com",
+      "senderName": "ANZ Security",
+      "subject": "Account restricted",
+      "body": "Your account is restricted. Sign in to verify your account immediately.",
+      "links": [
+        {
+          "text": "ANZ Internet Banking",
+          "url": "https://anz-secure-login.invalid/signin"
+        }
+      ],
+      "auth": {
+        "spf": "fail",
+        "spfDomain": "attacker.invalid",
+        "dkim": "fail",
+        "dkimDomain": "attacker.invalid",
+        "dmarc": "fail",
+        "dmarcDomain": "gmail.com"
+      }
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [],
+      "scoreRange": [
+        60,
+        100
+      ],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "VAL-P07",
+    "group": "validation-phishing",
+    "theme": "qr-shortener",
+    "description": "QR verification lure combines account-verification wording with a shortened destination.",
+    "email": {
+      "provider": "gmail",
+      "sender": "notice@service.example",
+      "senderName": "Service Notice",
+      "subject": "QR verification required",
+      "body": "Action required. Scan the QR code to verify your account and avoid restricted access.",
+      "links": [
+        {
+          "text": "Verification QR destination",
+          "url": "https://bit.ly/qr-verify"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "scoreRange": [
+        30,
+        55
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-P08",
+    "group": "validation-phishing",
+    "theme": "fake-support-callback",
+    "description": "Unexpected subscription charge uses urgency and a fake support callback but no technical corroboration.",
+    "email": {
+      "provider": "gmail",
+      "sender": "billing@subscription-alert.example",
+      "senderName": "Billing Team",
+      "subject": "Automatic renewal notice",
+      "body": "Your subscription was renewed for $499. If you did not authorise this purchase, call support immediately to dispute the charge.",
+      "links": []
+    },
+    "expected": {
+      "preferredStates": [
+        "review"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        20,
+        44
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-P09",
+    "group": "validation-phishing",
+    "theme": "tax-refund-phish",
+    "description": "IRD refund lure uses account-verification wording and a deceptive destination.",
+    "email": {
+      "provider": "gmail",
+      "sender": "refund@ird-notice.example",
+      "senderName": "Inland Revenue",
+      "subject": "Tax refund available",
+      "body": "You are eligible for a tax refund. Verify your identity to claim your refund.",
+      "links": [
+        {
+          "text": "https://www.ird.govt.nz/myir",
+          "url": "https://ird-refund.invalid/claim"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        55,
+        100
+      ],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "VAL-P10",
+    "group": "validation-phishing",
+    "theme": "parcel-ip-host",
+    "description": "Parcel-payment pressure points to a raw-IP destination.",
+    "email": {
+      "provider": "yahoo",
+      "sender": "delivery@parcel-notice.example",
+      "senderName": "Parcel Service",
+      "subject": "Parcel held",
+      "body": "Your parcel is on hold. Pay now to avoid a late fee and arrange redelivery.",
+      "links": [
+        {
+          "text": "Pay delivery fee",
+          "url": "https://192.0.2.40/payment"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "scoreRange": [
+        40,
+        70
+      ],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "VAL-P11",
+    "group": "validation-phishing",
+    "theme": "display-destination-mismatch",
+    "description": "Benign-looking link text hides an unrelated destination even without suspicious body wording.",
+    "email": {
+      "provider": "gmail",
+      "sender": "notice@account-update.example",
+      "senderName": "Account Service",
+      "subject": "Service update",
+      "body": "A service update is available in your account.",
+      "links": [
+        {
+          "text": "https://www.paypal.com/",
+          "url": "https://payment-review.invalid/"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "scoreRange": [
+        40,
+        65
+      ],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "VAL-P12",
+    "group": "validation-phishing",
+    "theme": "typosquat-identity",
+    "description": "Microsoft-branded sender/domain inconsistency is reinforced by a typosquat destination.",
+    "email": {
+      "provider": "outlook",
+      "sender": "security@micros0ft-mail.example",
+      "senderName": "Microsoft Security",
+      "subject": "Security notification",
+      "body": "Review the security notification for your Microsoft account.",
+      "links": [
+        {
+          "text": "Microsoft security",
+          "url": "https://micros0ft.com/"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "high"
+      ],
+      "acceptableStates": [
+        "caution"
+      ],
+      "scoreRange": [
+        55,
+        100
+      ],
+      "forbiddenStates": []
+    }
+  },
+  {
+    "id": "VAL-P13",
+    "group": "validation-phishing",
+    "theme": "credential-over-http",
+    "description": "Credential request is paired with an HTTP login destination but no stronger identity mismatch.",
+    "email": {
+      "provider": "gmail",
+      "sender": "service@unknown.example",
+      "senderName": "Account Service",
+      "subject": "Confirm sign-in",
+      "body": "Confirm your password to continue.",
+      "links": [
+        {
+          "text": "Continue",
+          "url": "http://example.test/login"
+        }
+      ]
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "review"
+      ],
+      "scoreRange": [
+        30,
+        50
+      ],
+      "forbiddenStates": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "VAL-P14",
+    "group": "validation-phishing",
+    "theme": "bec-secrecy-identity",
+    "description": "Business-email-compromise style message combines changed payment details, urgency, secrecy and Reply-To mismatch.",
+    "email": {
+      "provider": "gmail",
+      "sender": "finance@supplier.example",
+      "senderName": "Supplier Finance",
+      "subject": "Urgent payment change",
+      "body": "Urgent. Our bank details have changed. Use the new account for today's payment and keep this confidential until the transfer is complete.",
+      "links": [],
+      "replyTo": "paymentdesk@other.example"
+    },
+    "expected": {
+      "preferredStates": [
+        "caution"
+      ],
+      "acceptableStates": [
+        "high"
+      ],
+      "scoreRange": [
+        35,
+        65
+      ],
+      "forbiddenStates": []
+    }
+  }
+]

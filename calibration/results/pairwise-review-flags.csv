@@ -1,0 +1,2 @@
+type,signal_a,signal_b,state,score,reason
+single,punycode-link,,caution,35,medium structural signal alone reaches Caution; human calibration review requested

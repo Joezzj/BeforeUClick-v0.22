@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BeforeUClick — Settings</title>
+    <link rel="stylesheet" href="options.css">
+    <link rel="stylesheet" href="../ui/theme.css">
+</head>
+<body class="buc-app">
+    <header class="header-band">
+        <img class="logo" src="../icons/icon128.png" alt="BeforeUClick">
+        <div class="title">
+            <h1>Settings</h1>
+            <p class="eyebrow">Preferences</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="settings-intro"><span class="settings-kicker">YOUR PREFERENCES</span><p>Fine-tune how BeforeUClick behaves. Preference changes are saved locally and automatically.</p></div>
+
+        <h2 class="section-title">Panel &amp; access</h2>
+        <p class="section-description">Choose how the in-email checker is opened, sized and positioned.</p>
+        <section class="panel">
+            <label class="field field-checkbox">
+                <span><strong>Floating “Check this email” button</strong><small>Keep the quick-access button on supported webmail pages. Turn it off if you prefer using the browser toolbar button.</small></span>
+                <input id="showManualTrigger" type="checkbox">
+            </label>
+
+            <label class="field">
+                <span><strong>Panel size</strong><small>Choose the maximum width of the in-email result panel. Small screen is useful for lower-resolution or narrow windows; Extra large is intended for large/4K displays. Screen scaling varies, so choose whichever feels comfortable. The panel still shrinks automatically if the browser window is smaller.</small></span>
+                <select id="panelSize">
+                    <option value="compact">Small screen — 320 px</option>
+                    <option value="standard">Standard — 412 px</option>
+                    <option value="large">Large — 540 px</option>
+                    <option value="xlarge">Extra large / 4K — 720 px</option>
+                </select>
+            </label>
+
+            <label class="field">
+                <span><strong>Panel position</strong><small>Movable lets you drag the panel by its header. Fixed keeps it at the top-right of the page.</small></span>
+                <select id="panelPositionMode">
+                    <option value="movable">Movable</option>
+                    <option value="fixed">Fixed top-right</option>
+                </select>
+            </label>
+        </section>
+
+        <h2 class="section-title">Email checking</h2>
+        <p class="section-description">Choose how BeforeUClick behaves around links and the inbox. Email analysis starts only when you choose to check.</p>
+        <section class="panel">
+            <label class="field">
+                <span><strong>Highlight links after a check</strong><small>Show contextual status chips only after you check the open email.</small></span>
+                <select id="highlightMode">
+                    <option value="concerns">Concerns only</option>
+                    <option value="all">All checked links</option>
+                    <option value="off">Off</option>
+                </select>
+            </label>
+
+            <label class="field">
+                <span><strong>Ask before opening a link</strong><small>Controls the risk-sensitive click guard for a checked message.</small></span>
+                <select id="clickGuardMode">
+                    <option value="strong-only">Strong / high concerns</option>
+                    <option value="high-only">High concern only</option>
+                    <option value="caution-high">Caution + high concern</option>
+                    <option value="off">Off</option>
+                </select>
+            </label>
+
+            <label class="field">
+                <span><strong>Gmail inbox sender preview</strong><small>Optional sender-only preview. It does not read message bodies and does not count as a full check.</small></span>
+                <select id="inboxPreviewMode">
+                    <option value="off">Off — manual checks only</option>
+                    <option value="concerns">Sender concerns only</option>
+                </select>
+            </label>
+        </section>
+
+        <h2 class="section-title">Display &amp; accessibility</h2>
+        <p class="section-description">These settings affect BeforeUClick's own interface, not the email provider.</p>
+        <section class="panel">
+            <label class="field">
+                <span><strong>Text size</strong><small>Changes BeforeUClick text, buttons and check cards only. Very large is intended for users who need substantially larger reading and touch targets.</small></span>
+                <select id="fontSize">
+                    <option value="normal">Normal</option>
+                    <option value="large">Large</option>
+                    <option value="xlarge">Extra large</option>
+                    <option value="xxlarge">Very large</option>
+                </select>
+            </label>
+
+            <label class="field">
+                <span><strong>Information spacing</strong><small>Comfortable gives controls more room. Compact fits more information on screen without changing the text size.</small></span>
+                <select id="density">
+                    <option value="comfortable">Comfortable</option>
+                    <option value="compact">Compact</option>
+                </select>
+            </label>
+
+            <label class="field">
+                <span><strong>Link information card</strong><small>Shows a small explanation when you point at or keyboard-focus a checked link. Turn it off if the extra card gets in the way.</small></span>
+                <select id="linkInfoMode">
+                    <option value="hover-focus">Hover or keyboard focus</option>
+                    <option value="off">Off</option>
+                </select>
+            </label>
+
+            <label class="field field-checkbox">
+                <span><strong>High contrast</strong><small>Makes borders, text separation and controls easier to distinguish. On by default because some users may not know this option exists.</small></span>
+                <input id="highContrast" type="checkbox">
+            </label>
+
+            <label class="field field-checkbox">
+                <span><strong>Reduce motion</strong><small>Removes BeforeUClick animations and transitions. Useful if motion is distracting or uncomfortable.</small></span>
+                <input id="reducedMotion" type="checkbox">
+            </label>
+        </section>
+
+        <h2 class="section-title">Privacy &amp; data</h2>
+        <p class="section-description">BeforeUClick separates ordinary app settings from optional information about the emails you check.</p>
+        <section class="panel">
+            <label class="field field-checkbox">
+                <span><strong>Remember email-related information on this device</strong><small>Off by default. Turn this on if you want Known senders and unique daily check/review counters. Those features need to remember a small amount of email-related information between checks.</small></span>
+                <input id="storageMode" type="checkbox">
+            </label>
+        </section>
+        <section class="panel privacy-panel">
+            <p><strong>What this setting means:</strong> when it is off, BeforeUClick can still check the email you are viewing, but it does not retain known-sender addresses or a history of which emails were checked. When it is on, addresses you deliberately add to Known senders are kept locally, and the daily counter stores only an opaque message fingerprint plus the latest result so the same email is not counted twice.</p>
+            <ul class="privacy-facts">
+                <li><strong>App preferences:</strong> text size, contrast, panel size/position and similar settings are saved locally so the app remembers how you configured it. They are not email history.</li>
+                <li><strong>Email content:</strong> bodies, subjects, recipients, analysed URLs, raw headers, extracted metadata and full reports are not kept as history by this option.</li>
+                <li><strong>Network use:</strong> the current MVP analyses locally and has no BeforeUClick telemetry, advertising-data upload, or data-selling backend.</li>
+                <li><strong>Reference data:</strong> the rules and reference lists are bundled read-only with the extension and do not require remembered email information.</li>
+            </ul>
+            <div class="privacy-actions">
+                <button id="clearRememberedData" type="button">Clear remembered email data</button>
+            </div>
+        </section>
+
+        <h2 class="section-title">Testing &amp; validation</h2>
+        <p class="section-description">Developer/testing tools for the Capstone validation phase. Ordinary users do not need this.</p>
+        <section class="panel">
+            <label class="field field-checkbox">
+                <span><strong>Show provider-validation tools</strong><small>Adds Record &amp; close and Export batch controls to the in-email panel. Records stay only in the current webmail tab's memory until you export them; refreshing or closing that tab clears the batch. The batch omits subjects, message bodies, recipients, full email addresses, raw headers and full URLs.</small></span>
+                <input id="validationMode" type="checkbox">
+            </label>
+        </section>
+
+        <p id="saveStatus" class="save-status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="preferences.js"></script>
+    <script src="options.js"></script>
+</body>
+</html>

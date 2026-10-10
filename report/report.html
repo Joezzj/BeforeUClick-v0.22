@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BeforeUClick — Full report</title>
+    <link rel="stylesheet" href="report.css">
+    <link rel="stylesheet" href="../ui/theme.css">
+</head>
+<body class="buc-app">
+    <aside class="app-sidebar">
+        <button id="brandHome" class="app-brand" type="button" aria-label="Back to full report"><img src="../icons/icon48.png" alt=""><span>BeforeUClick<small>EMAIL CHECKS</small></span></button>
+        <p class="nav-label">WORKSPACE</p>
+        <nav aria-label="Workspace">
+            <button id="reportTab" class="sidebar-tab active" type="button" aria-current="page"><span aria-hidden="true">▤</span> Full report</button>
+            <button id="settingsToggle" class="sidebar-tab" type="button" aria-controls="settingsView"><span aria-hidden="true">⚙</span> Settings</button>
+            <button id="sendersTab" class="sidebar-tab" type="button" aria-controls="sendersView"><span aria-hidden="true">@</span> Known senders</button>
+            <button id="referenceTab" class="sidebar-tab" type="button" aria-controls="referenceView"><span aria-hidden="true">▤</span> Reference data</button>
+        </nav>
+        <div class="sidebar-bottom"><span class="local-dot"></span> Local analysis<small>Your email stays in your browser.</small></div>
+    </aside>
+    <main class="shell">
+        <header class="topbar">
+            <div>
+                <p class="page-eyebrow">BEFORE YOU CLICK</p>
+                <h1 id="pageTitle">Full report</h1>
+                <p id="reportSubtitle">Loading the most recent checked message…</p>
+            </div>
+            <div class="topbar-actions">
+                <button id="shareReportButton" class="share-button" type="button" disabled aria-label="Share this BeforeUClick check">↗ <span>Share</span></button>
+                <span class="privacy-pill"><span class="local-dot"></span> On-device analysis</span>
+            </div>
+        </header>
+        <section id="settingsView" class="hidden" aria-label="Settings">
+            <iframe id="settingsFrame" title="BeforeUClick settings"></iframe>
+        </section>
+        <section id="sendersView" class="hidden" aria-label="Known senders">
+            <iframe id="sendersFrame" title="BeforeUClick known senders"></iframe>
+        </section>
+        <section id="referenceView" class="hidden" aria-label="Reference data">
+            <iframe id="referenceFrame" title="BeforeUClick reference data"></iframe>
+        </section>
+        <div id="reportView">
+
+        <section id="loading" class="panel empty-card" role="status"><span class="loading-ring" aria-hidden="true"></span><h2>Preparing your report</h2><p>Retrieving the evidence from your open email.</p></section>
+        <section id="error" class="panel error empty-card hidden" role="status"></section>
+
+        <div id="report" class="hidden">
+            <section id="summaryCard" class="panel summary-card">
+                <p class="eyebrow">Overall assessment</p>
+                <h2 id="verdict"></h2>
+                <p id="score"></p>
+                <p id="summaryMessage"></p>
+            </section>
+
+            <details class="panel" open>
+                <summary>Component assessments</summary>
+                <div id="components" class="component-grid"></div>
+            </details>
+
+            <details class="panel" open>
+                <summary>Sender and message details</summary>
+                <div id="metadata"></div>
+                <div id="knownSenderAction" class="inline-action"></div>
+            </details>
+
+            <details class="panel" open>
+                <summary>Authentication &amp; headers <span id="authStatus" class="count"></span></summary>
+                <div id="authentication"></div>
+            </details>
+
+            <details class="panel technical">
+                <summary>Raw Internet headers</summary>
+                <pre id="rawHeaders"></pre>
+            </details>
+
+            <details class="panel" open>
+                <summary>Why this result? <span id="evidenceCount" class="count"></span></summary>
+                <div id="evidence"></div>
+            </details>
+
+            <details class="panel technical">
+                <summary>Evaluation diagnostics</summary>
+                <div id="scoreBreakdown"></div>
+            </details>
+
+            <details class="panel" open>
+                <summary>Links <span id="linkCount" class="count"></span></summary>
+                <div id="links"></div>
+            </details>
+
+            <details class="panel">
+                <summary>Wording matches <span id="wordingCount" class="count"></span></summary>
+                <div id="wording"></div>
+            </details>
+
+            <details class="panel">
+                <summary>All risk indicators <span id="warningCount" class="count"></span></summary>
+                <div id="warnings"></div>
+            </details>
+
+            <details class="panel">
+                <summary>Check availability <span id="unavailableCount" class="count"></span></summary>
+                <div id="unavailable"></div>
+            </details>
+
+            <details class="panel technical">
+                <summary>Extraction details</summary>
+                <pre id="debug"></pre>
+            </details>
+
+            <p class="footnote">
+                BeforeUClick reports evidence, not a probability or guarantee. A result of “No obvious concerns”
+                or “Not enough evidence” does not prove that a message or destination is safe.
+            </p>
+        </div>
+        </div>
+    </main>
+
+    <div id="workspaceStatus" class="workspace-status" role="status" aria-live="polite"></div>
+    <script src="../settings/preferences.js"></script>
+    <script src="../ui/share.js"></script>
+    <script src="report.js"></script>
+</body>
+</html>
